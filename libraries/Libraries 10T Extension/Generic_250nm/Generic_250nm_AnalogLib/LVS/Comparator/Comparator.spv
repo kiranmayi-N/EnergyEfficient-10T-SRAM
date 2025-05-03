@@ -1,0 +1,60 @@
+* SPICE export by:  S-Edit 16.00
+* Export time:      Wed Feb 13 11:26:32 2013
+* Design:           Generic_250nm_AnalogLib
+* Cell:             Comparator
+* Interface:        view0
+* View:             view0
+* View type:        connectivity
+* Export as:        top-level cell
+* Export mode:      hierarchical
+* Exclude empty cells: no
+* Exclude .model:   no
+* Exclude .end:     no
+* Exclude simulator commands:     yes
+* Expand paths:     yes
+* Wrap lines:       no
+* Root path:        S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib
+* Exclude global pins:   no
+* Exclude instance locations: no
+* Control property name(s): LVS SPICE
+
+* Design: Generic_250nm_AnalogLib / Cell: Comparator / View: view0 / Page: 
+* Designed by: 
+* Organization: 
+* Info: 
+* Date: 02/12/13 16:11:58
+* Revision: 9 $ $x=7600 $y=600 $w=3600 $h=1200
+*************** Subcircuits *****************
+.subckt BiasGen bn bp Gnd Vdd 
+* Design: Generic_250nm_AnalogLib / Cell: BiasGen / View: Main / Page: 
+* Designed by: Tanner EDA Library Development Team
+* Organization: Tanner Research - Pasadena, California, USA
+* Info:  
+* Date: 02/12/13 16:11:58
+* Revision: 8 $ $x=7600 $y=600 $w=3600 $h=1200
+RR1 N_1 Gnd R=1.062k $ $x=5609 $y=2600 $w=159 $h=600
+CC1 Vdd bn  C=103.2f $ $x=3409 $y=4200 $w=619 $h=600 $m
+MM1n bn bn Gnd 0 NMOS25 W=6u L=500n M=1 AS=3.9p PS=13.3u AD=3.9p PD=13.3u $ $x=4007 $y=3400 $w=414 $h=600 $m
+MM2n bp bn N_1 0 NMOS25 W=6u L=500n M=1 AS=3.9p PS=13.3u AD=3.9p PD=13.3u $ $x=4793 $y=3400 $w=414 $h=600
+MM3n bp bn N_1 0 NMOS25 W=6u L=500n M=1 AS=3.9p PS=13.3u AD=3.9p PD=13.3u $ $x=6093 $y=3400 $w=414 $h=600
+MM4p bn bp Vdd Vdd PMOS25 W=1.5u L=500n M=4 AS=768.75f PS=3.275u AD=562.5f PD=2.25u $ $x=4607 $y=4300 $w=414 $h=600 $m
+MM5p bp bp Vdd Vdd PMOS25 W=1.5u L=500n M=4 AS=768.75f PS=3.275u AD=562.5f PD=2.25u $ $x=5693 $y=4300 $w=414 $h=600
+.ends
+
+
+***** Top Level *****
+XXBias N_2 N_3 Gnd Vdd BiasGen $ $x=1400 $y=2650 $w=600 $h=700
+MM3n 3 3 Gnd 0 NMOS25 W=750n L=350n M=2 AS=487.5f PS=2.8u AD=281.25f PD=1.5u $ $x=4107 $y=2400 $w=414 $h=600 $m
+MM4n 4 3 Gnd 0 NMOS25 W=750n L=350n M=2 AS=487.5f PS=2.8u AD=281.25f PD=1.5u $ $x=5093 $y=2400 $w=414 $h=600
+MM7n Out 4 Gnd 0 NMOS25 W=750n L=350n M=4 AS=384.375f PS=2.15u AD=281.25f PD=1.5u $ $x=7093 $y=2800 $w=414 $h=600
+MM9n N_1 N_2 Gnd 0 NMOS25 W=550n L=2u M=1 AS=357.5f PS=2.4u AD=357.5f PD=2.4u $ $x=2193 $y=2400 $w=414 $h=600
+MM1p 3 Vplus 2 Vdd PMOS25 W=1.5u L=350n M=2 AS=975f PS=4.3u AD=562.5f PD=2.25u $ $x=3693 $y=3200 $w=414 $h=600
+MM2p 4 Vminus 2 Vdd PMOS25 W=1.5u L=350n M=2 AS=975f PS=4.3u AD=562.5f PD=2.25u $ $x=5507 $y=3200 $w=414 $h=600 $m
+MM5p 1 1 Vdd Vdd PMOS25 W=1.5u L=350n M=2 AS=975f PS=4.3u AD=562.5f PD=2.25u $ $x=3507 $y=4200 $w=414 $h=600 $m
+MM6p 2 1 Vdd Vdd PMOS25 W=1.5u L=350n M=2 AS=975f PS=4.3u AD=562.5f PD=2.25u $ $x=4493 $y=4200 $w=414 $h=600
+MM8p Out 1 Vdd Vdd PMOS25 W=1.5u L=350n M=4 AS=768.75f PS=3.275u AD=562.5f PD=2.25u $ $x=7093 $y=4200 $w=414 $h=600
+VAmmeter_1 1 N_1 0v
+*.PRINT DC I(VAmmeter_1)
+*.MEASURE DC  avg I(VAmmeter_1) $ $x=2400 $y=3205 $w=260 $h=410
+.end
+

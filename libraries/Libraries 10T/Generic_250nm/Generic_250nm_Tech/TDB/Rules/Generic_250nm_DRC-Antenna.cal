@@ -1,0 +1,82 @@
+TITLE	"Generic 0.25 um Process-Antenna Rules"
+
+//	Setup Info
+PRECISION	1000
+RESOLUTION	50
+UNIT LENGTH	u
+
+FLAG SKEW YES
+
+DRC INCREMENTAL CONNECT YES
+
+DRC TOLERANCE FACTOR 0.005
+
+//	Input Layers
+LAYER	Active			 4
+LAYER	ThickActive		 5
+LAYER	Poly				 8
+LAYER	Contact			11
+LAYER	Metal1			12
+LAYER	Via1				13
+LAYER	Metal2			14
+LAYER	Via2				15
+LAYER	Metal3			16
+LAYER	Via3				17
+LAYER	Metal4			19
+LAYER	ResistorID		21
+
+TEXT LAYER Poly Metal1 Metal2 Metal3 Metal4
+
+Gate = Active AND Poly
+SourceDrain = Active NOT Poly
+
+CONNECT Poly Gate
+CONNECT Metal1 Poly BY Contact
+
+// Antenna Rules
+Ant1 { @ Metal1 to Gate Ratio has to be less than 2.5 - No diode check
+	X = NET AREA RATIO Metal1 Gate > 2.5
+	MERGE X
+}
+
+// Unmerged results.
+Ant2a { @ Poly & Metal1 to Gate Ratio has to be less than 2.5 - No diode check.
+	NET AREA RATIO Poly Metal1 OVER Gate > 2.5
+			[(AREA(Metal1) + AREA(Poly)) / AREA(Gate)]
+}
+
+// Displays merged Polygons on Poly that fail the constraint.
+Ant2b { @ Poly & Metal1 to Gate Ratio has to be less than 2.5 - No diode check.
+	X = NET AREA RATIO Poly Metal1 OVER Gate > 2.5
+			[(AREA(Metal1) + AREA(Poly)) / AREA(Gate)]
+	MERGE X
+}
+
+// Displays merged Polygons on Metal1 that fail the constraint.
+Ant2c { @ Poly & Metal1 to Gate Ratio has to be less than 2.5 - No diode check.
+	X = NET AREA RATIO Metal1 Poly OVER Gate > 2.5
+			[(AREA(Metal1) + AREA(Poly)) / AREA(Gate)]
+	MERGE X
+}
+
+// Merges together the polygons on Poly & Metal1 that fail the constraint.
+Ant2d { @ Poly & Metal1 to Gate Ratio has to be less than 2.5 - No diode check.
+	X = NET AREA RATIO Poly Metal1 OVER Gate > 2.5
+			[(AREA(Metal1) + AREA(Poly)) / AREA(Gate)]
+	ORNET X Metal1
+}
+
+// M1_Diode = NET AREA RATIO Metal1 SourceDrain == 0
+
+CONNECT Metal1 SourceDrain BY Contact
+
+Ant3 { @ Poly & Metal1 to Gate Ratio has to be less than 20 - Exclude nets connected to ground through a diode.
+	NET AREA RATIO Metal1 Poly Gate SourceDrain > 2.5
+		[((AREA(Metal1) + AREA(Poly)) * !AREA(SourceDrain)) / AREA(Gate)]
+}
+
+Ant3b { @ Poly & Metal1 to Gate Ratio has to be less than 20 - Exclude nets connected to ground through a diode.
+	M1_Diode = NET AREA RATIO Metal1 SourceDrain == 0
+	NET AREA RATIO M1_Diode Poly Gate > 2.5
+		[(AREA(M1_Diode) + AREA(Poly)) / AREA(Gate)]
+}

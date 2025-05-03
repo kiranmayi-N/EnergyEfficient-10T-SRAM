@@ -1,0 +1,43 @@
+* SPICE export by:  S-Edit 16.00
+* Export time:      Thu Feb 14 12:04:07 2013
+* Design:           Generic_250nm_AnalogLib
+* Cell:             DAC_BIT
+* Interface:        view_1
+* View:             view_1
+* View type:        connectivity
+* Export as:        top-level cell
+* Export mode:      hierarchical
+* Exclude empty cells: no
+* Exclude .model:   no
+* Exclude .end:     no
+* Exclude simulator commands:     no
+* Expand paths:     yes
+* Wrap lines:       no
+* Root path:        S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib
+* Exclude global pins:   no
+* Exclude instance locations: no
+* Control property name(s): LVS SPICE
+
+********* Simulation Settings - General Section *********
+.lib '../../../Generic_250nm_Tech/Generic_250nm.lib' LVS
+
+* Design: Generic_250nm_AnalogLib / Cell: DAC_BIT / View: view_1 / Page: 
+* Designed by: 
+* Organization: 
+* Info: 
+* Date: 02/12/13 16:11:58
+* Revision: 16 $ $x=7600 $y=600 $w=3600 $h=1200
+***** Top Level *****
+XR1 VIN VOUT rhp L=20u W=2u M=1 ; R=10.14k $ $x=3700 $y=4409 $w=600 $h=159
+XR2 VOUT b rhp L=40u W=2u M=1 ; R=20.27k $ $x=6009 $y=3700 $w=159 $h=600
+MM1n bb BIT_IN VREFM VREFM NMOS25 W=1.9u L=250n M=1 AS=1.235p PS=5.1u AD=1.235p PD=5.1u $ $x=3693 $y=2500 $w=414 $h=600
+MM3n b bb VREFM VREFM NMOS25 W=1.9u L=250n M=3 AS=886.66667f PS=3.4666666u AD=886.66667f PD=3.4666666u $ $x=4893 $y=2500 $w=414 $h=600
+MM2p bb BIT_IN VREFP VREFP PMOS25 W=5.1u L=250n M=1 AS=3.315p PS=11.5u AD=3.315p PD=11.5u $ $x=3693 $y=3300 $w=414 $h=600
+MM4p b bb VREFP VREFP PMOS25 W=5.1u L=250n M=3 AS=2.38p PS=7.7333332u AD=2.38p PD=7.7333332u $ $x=4893 $y=3300 $w=414 $h=600
+
+********* Simulation Settings - Analysis Section *********
+
+********* Simulation Settings - Additional SPICE Commands *********
+
+.end
+

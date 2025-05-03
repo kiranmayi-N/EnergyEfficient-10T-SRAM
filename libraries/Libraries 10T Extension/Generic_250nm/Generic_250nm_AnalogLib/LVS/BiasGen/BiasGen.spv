@@ -1,0 +1,45 @@
+* SPICE export by:  S-Edit 16.00
+* Export time:      Thu Feb 14 18:22:12 2013
+* Design:           Generic_250nm_AnalogLib
+* Cell:             BiasGen
+* Interface:        Main
+* View:             Main
+* View type:        connectivity
+* Export as:        top-level cell
+* Export mode:      hierarchical
+* Exclude empty cells: no
+* Exclude .model:   no
+* Exclude .end:     no
+* Exclude simulator commands:     no
+* Expand paths:     yes
+* Wrap lines:       no
+* Root path:        S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib
+* Exclude global pins:   no
+* Exclude instance locations: no
+* Control property name(s): LVS SPICE
+
+********* Simulation Settings - General Section *********
+.lib '../../../Generic_250nm_Tech/Generic_250nm.lib' LVS
+
+* Design: Generic_250nm_AnalogLib / Cell: BiasGen / View: Main / Page: 
+* Designed by: Tanner EDA Library Development Team
+* Organization: Tanner Research - Pasadena, California, USA
+* Info:  
+* Date: 02/14/13 12:08:01
+* Revision: 9 $ $x=7600 $y=600 $w=3600 $h=1200
+***** Top Level *****
+XR1 N1 Gnd rnp L=12u W=2u M=1 ; R=1.062k $ $x=5609 $y=2600 $w=159 $h=600
+XC1 Vdd bn Capacitor_MIM L=10u W=10u $ C=103.2f $ $x=3409 $y=4200 $w=619 $h=600 $m
+MM1n bn bn Gnd 0 NMOS25 W=6u L=500n M=1 AS=3.9p PS=13.3u AD=3.9p PD=13.3u $ $x=4007 $y=3400 $w=414 $h=600 $m
+MM2n bp bn N1 0 NMOS25 W=3u L=500n M=2 AS=1.95p PS=7.3u AD=1.125p PD=3.75u  
+MM2n_Par N1 0 N1 0 NMOS25 W=3u L=500n M=2 AS=1.95p PS=7.3u AD=1.125p PD=3.75u $ $x=4793 $y=3400 $w=414 $h=600
+MM3n bp bn N1 0 NMOS25 W=3u L=500n M=2 AS=1.95p PS=7.3u AD=1.125p PD=3.75u $ $x=6093 $y=3400 $w=414 $h=600
+MM4p bn bp Vdd Vdd PMOS25 W=1.5u L=500n M=4 AS=768.75f PS=3.275u AD=562.5f PD=2.25u $ $x=4607 $y=4300 $w=414 $h=600 $m
+MM5p bp bp Vdd Vdd PMOS25 W=1.5u L=500n M=4 AS=768.75f PS=3.275u AD=562.5f PD=2.25u $ $x=5693 $y=4300 $w=414 $h=600
+
+********* Simulation Settings - Analysis Section *********
+
+********* Simulation Settings - Additional SPICE Commands *********
+
+.end
+

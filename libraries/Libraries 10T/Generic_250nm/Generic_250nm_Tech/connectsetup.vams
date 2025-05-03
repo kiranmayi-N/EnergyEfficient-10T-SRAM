@@ -1,0 +1,48 @@
+`include "constants.h"
+`include "discipline.h"
+
+
+connectrules  div_rules;
+  connect BasicD2A electrical, logic;
+  connect BasicA2D electrical, logic;
+endconnectrules
+
+
+connectmodule BasicA2D(in,out);
+    input in;
+    output out;
+    electrical in;
+    logic   out;
+    reg     out;
+    parameter thresh = 0.5;
+
+    initial
+        out = (V(in) > thresh) ? 1'b1 : 1'b0;
+
+    always @(above(V(in)-thresh))
+        out = 1'b1;
+
+    always @(above(thresh - V(in)))
+        out = 1'b0;
+
+endmodule
+
+
+connectmodule BasicD2A(in,out);
+    input in;
+    output out;
+    electrical out;
+    logic   in;
+    parameter Vhigh = 2.5;
+    parameter Vlow  = 0;
+    parameter tr = 1n;
+    parameter tf = 1n;
+
+    analog begin
+        @(posedge in);
+        @(negedge in);
+        V(out) <+ (Vhigh - Vlow)*transition(in,0,tr,tf) + Vlow;
+    end
+
+endmodule
+

@@ -1,0 +1,45 @@
+File is written by LVS v16.00 on 02/14/13 12:43:06.
+Node and elements after first round of iterations.
+
+Perfectly matched nodes
+=======================
+
+File: DAC_BIT.spc               <==>  DAC_BIT.spv                   
+========================
+Vin                             <==>  VIN                           
+VrefP                           <==>  VREFP                         
+b                               <==>  b                             
+VrefM                           <==>  VREFM                         
+Bit_In                          <==>  BIT_IN                        
+bb                              <==>  bb                            
+-----------------------
+
+Other nodes
+=======================
+
+-----------------------
+
+-----------------------
+
+
+Perfectly matched elements
+=======================
+
+File: DAC_BIT.spc               <==>  DAC_BIT.spv                   
+=======================
+R(XU10/X5/X1)_Merged_Elements   <==>  R(XR2)_Merged_Elements        
+M1(XU5)_Merged_Elements         <==>  MM4p                          
+M4                              <==>  MM2p                          
+M1(XU3)_Merged_Elements         <==>  MM3n                          
+M2                              <==>  MM1n                          
+-----------------------
+
+Other elements
+=======================
+
+-----------------------
+
+-----------------------
+
+==============================================================================
+

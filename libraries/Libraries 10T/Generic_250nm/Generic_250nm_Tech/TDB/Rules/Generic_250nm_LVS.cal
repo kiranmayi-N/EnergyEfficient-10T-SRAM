@@ -1,0 +1,507 @@
+
+
+//	Setup Info
+PRECISION	1000
+RESOLUTION	1
+UNIT LENGTH	u
+UNIT CAPACITANCE 1e-15
+FLAG ZEROWIDTHWIRES YES
+FLAG POLYGONVERTEXLIMIT 199
+FLAG WIREVERTEXLIMIT 200
+VIRTUAL CONNECT COLON NO
+VIRTUAL CONNECT SEMICOLON AS COLON NO
+VIRTUAL CONNECT DEPTH PRIMARY
+
+//	Input Layers
+LAYER NWELL 1
+LAYER DEEP_NWELL 2
+LAYER P_Well 3
+LAYER Active 4
+LAYER THICKACTIVE 5
+LAYER N_Implant 6
+LAYER P_Implant 7
+LAYER POLY 8
+LAYER Silicide_Block 9
+LAYER Resistor_Implant 10
+LAYER Contact 11
+LAYER Metal1 12
+LAYER Via1 13
+LAYER Metal2 14
+LAYER Via2 15
+LAYER Metal3 16
+LAYER Via3 17
+LAYER Top_Capacitor_Plate 18
+LAYER Metal4 19
+LAYER Passivation 20
+LAYER Resistor_ID 21
+LAYER Diode_ID 22
+LAYER Device_ID 29
+
+TEXT LAYER Device_ID
+TEXT LAYER POLY
+TEXT LAYER Metal1
+TEXT LAYER Metal2
+TEXT LAYER Metal3
+TEXT LAYER Metal4
+PORT LAYER POLY
+PORT LAYER Metal1
+PORT LAYER Metal2
+PORT LAYER Metal3
+PORT LAYER Metal4
+ATTACH POLY PolyWire
+
+ChipSubstrate = EXTENT
+Substrate = ChipSubstrate NOT NWELL
+Diffusion = Active NOT POLY
+
+ActiveContact = (Active OR THICKACTIVE) AND Contact
+PolyContact = POLY AND Contact
+
+AllImplant = N_Implant OR P_Implant
+
+NDiff = Diffusion AND N_Implant
+PDiff = Diffusion AND P_Implant
+
+Gate = POLY AND Active
+HV_Gate = Gate AND THICKACTIVE
+
+N_Channel = Gate NOT NWELL
+NTran = N_Channel NOT Top_Capacitor_Plate
+NonDeepNTran = NTran NOT DEEP_NWELL
+N_Channel_Deep = N_Channel AND DEEP_NWELL
+
+P_Channel = Gate AND NWELL
+PTran = P_Channel NOT Top_Capacitor_Plate
+
+NDiffResistor = NDiff AND Resistor_ID
+PDiffResistor = (PDiff AND Resistor_ID) AND NWELL
+
+PolyResistor = POLY AND Resistor_ID
+LowResPolyResistor = PolyResistor NOT Resistor_Implant
+
+// Interconnect
+NWellWire = NWELL NOT Resistor_ID
+Deep_N_Well_Wire = NWellWire OR DEEP_NWELL
+
+PolyWire = POLY NOT Silicide_Block
+
+Via3NoCap = Via3 NOT Top_Capacitor_Plate
+
+// Device Recognition Layers
+NWellResistor = (NWELL AND Resistor_ID) NOT PDiff
+
+SilNDiffResistor = NDiffResistor NOT Silicide_Block
+SilPDiffResistor = PDiffResistor NOT Silicide_Block
+
+NonSilNDiffResistor = NDiffResistor AND Silicide_Block
+NonSilPDiffResistor = PDiffResistor AND Silicide_Block
+
+NonSilPolyResistor = LowResPolyResistor AND Silicide_Block
+rnp = (POLY AND Silicide_Block) AND N_Implant
+rhp = (POLY AND Silicide_Block) AND Resistor_Implant
+
+SilPolyResistor = LowResPolyResistor NOT Silicide_Block
+
+NDiff_Diode = (Diode_ID AND NDiff) AND Substrate
+PDiff_Diode = (Diode_ID AND pdiff) AND NWellWire
+
+LVNTran_All = NonDeepNTran NOT THICKACTIVE 
+LVNTran_Dummy = LVNTran_All WITH TEXT "Dummy" Device_ID
+LVNTran = LVNTran_All NOT LVNTran_Dummy
+
+HVNTran = NonDeepNTran AND THICKACTIVE
+DeepNTran = NTran AND DEEP_NWELL
+
+LVPTran = PTran NOT THICKACTIVE
+HVPTran = PTran AND THICKACTIVE
+
+LVPTran_MOSRes = LVPTran WITH TEXT "MOSRes" Device_ID
+LVPTran_Reg = LVPTran NOT LVPTran_MOSRes
+
+MIMCap = (Top_Capacitor_Plate AND Metal3) INTERACT Via3
+
+// Connections
+ CONNECT NWellWire Deep_N_Well_Wire
+ CONNECT NWellWire ndiff
+ CONNECT P_Well pdiff
+ CONNECT Substrate pdiff
+ CONNECT Substrate ChipSubstrate
+ CONNECT ndiff Metal1 BY ActiveContact
+ CONNECT pdiff Metal1 BY ActiveContact
+ CONNECT PolyWire Metal1 BY PolyContact
+ CONNECT Metal1 Metal2 BY Via1
+ CONNECT Metal2 Metal3 BY Via2
+ CONNECT Metal3 Metal4 BY Via3NoCap
+
+DEVICE M(NMOS25_Dummy) LVNTran_Dummy PolyWire(G) NDiff(S) NDiff(D) Substrate(B)
+[
+	PROPERTY L, W
+
+	W=(perim_co(S, LVNTran_Dummy) + perim_co(D, LVNTran_Dummy)) / 2
+	L=area(LVNTran_Dummy) / W
+]
+
+NTranTemp = NDiff OR PolyWire
+DEVICE M(NMOS25) LVNTran PolyWire(G) NDiff(S) NDiff(D) Substrate(B) <NTranTemp>
+[
+	PROPERTY L, W, AD, AS, PD, PS
+	bend_effect = 0.5
+
+	W=(perim_co(S, LVNTran) + perim_co(D, LVNTran)) / 2
+	L=area(LVNTran) / W
+
+	if(bends(LVNTran) > 0)
+   {
+   	if(W > L)
+			W = W - bend_effect * bends(LVNTran) * L
+		else
+			L = L - bend_effect * bends(LVNTran) * W
+   }
+
+	PerIn_Drain  = perim_in(D, NTranTemp)
+	PerIn_Source = perim_in(S, NTranTemp)
+
+   IF(PerIn_Drain == 0) {
+   	AS = area(S) / 2
+   	AD = AS
+		PS = Perimeter(S) / 2
+		PD = PS
+	} 
+   ELSE IF(PerIn_Source == 0) {
+   	AD = area(D) / 2
+   	AS = AD
+		PD = perimeter(D) / 2
+		PS = PD
+	}
+	ELSE {
+		sd = W / PerIn_Drain
+		ss = W / PerIn_Source
+		AD = area(D) * sd
+		AS = area(S) * ss
+		PD = perim_co(D, LVNTran) + perim_co(D, NTranTemp) * sd
+		PS = perim_co(S, LVNTran) + perim_co(S, NTranTemp) * ss
+	}	
+	
+]
+
+PTranTemp = PDiff OR PolyWire
+DEVICE M(PMOS25) LVPTran_Reg PolyWire(G) PDiff(S) PDiff(D) NWellWire(B) <PTranTemp>
+[
+	PROPERTY L, W, AD, AS, PD, PS
+	bend_effect = 0.5
+
+	W=(perim_co(S, LVPTran_Reg) + perim_co(D, LVPTran_Reg)) / 2
+	L=area(LVPTran_Reg) / W
+
+	if(bends(LVPTran_Reg) > 0)
+   {
+   	if(W > L)
+			W = W - bend_effect * bends(LVPTran_Reg) * L
+		else
+			L = L - bend_effect * bends(LVPTran_Reg) * W
+   }
+
+	PerIn_Drain  = perim_in(D, PTranTemp)
+	PerIn_Source = perim_in(S, PTranTemp)
+
+   IF(PerIn_Drain == 0) {
+   	AS = area(S) / 2
+   	AD = AS
+		PS = Perimeter(S) / 2
+		PD = PS
+	} 
+   ELSE IF(PerIn_Source == 0) {
+   	AD = area(D) / 2
+   	AS = AD
+		PD = perimeter(D) / 2
+		PS = PD
+	}
+	ELSE {
+		sd = W / PerIn_Drain
+		ss = W / PerIn_Source
+		AD = area(D) * sd
+		AS = area(S) * ss
+		PD = perim_co(D, LVPTran_Reg) + perim_co(D, PTranTemp) * sd
+		PS = perim_co(S, LVPTran_Reg) + perim_co(S, PTranTemp) * ss
+	}	
+]
+
+DEVICE M(MOSRes) LVPTran_MOSRes PolyWire(G) PDiff(S) PDiff(D) NWellWire(B) <PTranTemp>
+[
+	PROPERTY L, W, AD, AS, PD, PS
+	bend_effect = 0.5
+
+	W=(perim_co(S, LVPTran_MOSRes) + perim_co(D, LVPTran_MOSRes)) / 2
+	L=area(LVPTran_MOSRes) / W
+
+	if(bends(LVPTran_MOSRes) > 0)
+   {
+   	if(W > L)
+			W = W - bend_effect * bends(LVPTran_MOSRes) * L
+		else
+			L = L - bend_effect * bends(LVPTran_MOSRes) * W
+   }
+
+	PerIn_Drain  = perim_in(D, PTranTemp)
+	PerIn_Source = perim_in(S, PTranTemp)
+
+   IF(PerIn_Drain == 0) {
+   	AS = area(S) / 2
+   	AD = AS
+		PS = Perimeter(S) / 2
+		PD = PS
+	} 
+   ELSE IF(PerIn_Source == 0) {
+   	AD = area(D) / 2
+   	AS = AD
+		PD = perimeter(D) / 2
+		PS = PD
+	}
+	ELSE {
+		sd = W / PerIn_Drain
+		ss = W / PerIn_Source
+		AD = area(D) * sd
+		AS = area(S) * ss
+		PD = perim_co(D, LVPTran_MOSRes) + perim_co(D, PTranTemp) * sd
+		PS = perim_co(S, LVPTran_MOSRes) + perim_co(S, PTranTemp) * ss
+	}	
+	
+]
+
+DEVICE M(NMOS33) HVNTran PolyWire(G) NDiff(S) NDiff(D) Substrate(B)  <NTranTemp>
+[
+	PROPERTY W, L, AD, AS, PD, PS
+	bend_effect = 0.5
+
+	W=(perim_co(S, HVNTran) + perim_co(D, HVNTran)) / 2
+	L=area(HVNTran) / W
+
+	if(bends(HVNTran) > 0)
+   {
+   	if(W > L)
+			W = W - bend_effect * bends(HVNTran) * L
+		else
+			L = L - bend_effect * bends(HVNTran) * W
+   }
+
+	PerIn_Drain  = perim_in(D, NTranTemp)
+	PerIn_Source = perim_in(S, NTranTemp)
+
+   IF(PerIn_Drain == 0) {
+   	AS = area(S) / 2
+   	AD = AS
+		PS = Perimeter(S) / 2
+		PD = PS
+	} 
+   ELSE IF(PerIn_Source == 0) {
+   	AD = area(D) / 2
+   	AS = AD
+		PD = perimeter(D) / 2
+		PS = PD
+	}
+	ELSE {
+		sd = W / PerIn_Drain
+		ss = W / PerIn_Source
+		AD = area(D) * sd
+		AS = area(S) * ss
+		PD = perim_co(D, HVNTran) + perim_co(D, NTranTemp) * sd
+		PS = perim_co(S, HVNTran) + perim_co(S, NTranTemp) * ss
+	}	
+	
+]
+
+DEVICE M(PMOS33) HVPTran PolyWire(G) PDiff(S) PDiff(D) NWellWire(B) <PTranTemp>
+[
+	PROPERTY W, L, AD, AS, PD, PS
+	bend_effect = 0.5
+
+	W=(perim_co(S, HVPTran) + perim_co(D, HVPTran)) / 2
+	L=area(HVPTran) / W
+
+	if(bends(HVPTran) > 0)
+   {
+   	if(W > L)
+			W = W - bend_effect * bends(HVPTran) * L
+		else
+			L = L - bend_effect * bends(HVPTran) * W
+   }
+	
+	PerIn_Drain  = perim_in(D, PTranTemp)
+	PerIn_Source = perim_in(S, PTranTemp)
+
+   IF(PerIn_Drain == 0) {
+   	AS = area(S) / 2
+   	AD = AS
+		PS = Perimeter(S) / 2
+		PD = PS
+	} 
+   ELSE IF(PerIn_Source == 0) {
+   	AD = area(D) / 2
+   	AS = AD
+		PD = perimeter(D) / 2
+		PS = PD
+	}
+	ELSE {
+		sd = W / PerIn_Drain
+		ss = W / PerIn_Source
+		AD = area(D) * sd
+		AS = area(S) * ss
+		PD = perim_co(D, HVPTran) + perim_co(D, PTranTemp) * sd
+		PS = perim_co(S, HVPTran) + perim_co(S, PTranTemp) * ss
+	}
+
+]
+
+DEVICE C(MIMCap) MIMCap Metal4(POS) Metal3(NEG)
+[
+	property C
+	CA = 977.7E-6
+	CP = 125.7E-12
+	C = CA * area(MIMCap) + CP * perim(MIMCap)
+]
+
+DEVICE R(rnp) rnp PolyWire(POS) PolyWire(NEG)
+[
+	PROPERTY R
+	res_area=AREA(rnp)
+	W=(perim_co(POS, rnp)+perim_co(NEG, rnp))/2
+	L=res_area/W
+	R = 175.3 * L/W
+]
+
+DEVICE R(rhp) rhp PolyWire(POS) PolyWire(NEG)
+[
+	PROPERTY R
+	res_area=AREA(rhp)
+	W=(perim_co(POS, rhp)+perim_co(NEG, rhp))/2
+	L=res_area/W
+	R = 1008.8 * L/W
+]
+
+#ifdef IGNORE_ME
+
+//	Rules
+
+ CONNECT "LPNP Emitter" pdiff
+ CONNECT "LPNP Collector" pdiff
+
+$$IMPL0016 =  OR pdiff PolyWire
+$$IMPL0019 =  OR ndiff PolyWire
+$$IMPL0022 =  OR pdiff PolyWire
+
+
+
+
+DEVICE D(PDIO) "PDiff Diode" pdiff(POS) "n well wire"(NEG)
+[
+	property AREA
+	AREA=area("PDiff Diode")
+]
+
+
+DEVICE D(NDIO) "NDiff Diode" Substrate(POS) ndiff(NEG)
+	BY NET
+[
+	property AREA
+na=1
+AREA=area("NDiff Diode")/na
+
+]
+
+
+
+DEVICE Q(PNP) "LPNP ID" "LPNP Collector"(C) "n well wire"(B) "LPNP Emitter"(E) ChipSubstrate(B)
+	BY NET
+[
+	property AREA
+na=1
+AREA=area("LPNP Emitter")/na
+
+]
+
+
+DEVICE R() "Poly Resistor" PolyWire(POS) PolyWire(NEG)
+	BY NET
+[
+	res_area=area("Poly Resistor")
+W=(perim_co(POS, "Poly Resistor")+perim_co(NEG, "Poly Resistor"))/2
+L=res_area/W
+R = res * L/W
+
+]
+
+
+
+
+
+DEVICE R() "NDiff Resistor" ndiff(POS) ndiff(NEG)
+	BY NET
+[
+	res_area=area("NDiff Resistor")
+W=(perim_co(POS, "NDiff Resistor")+perim_co(NEG, "NDiff Resistor"))/2
+L=res_area/W
+R = res * L/W
+
+]
+
+
+DEVICE R() "PDiff Resistor" pdiff(POS) pdiff(NEG)
+	BY NET
+[
+	res_area=area("PDiff Resistor")
+W=(perim_co(POS, "PDiff Resistor")+perim_co(NEG, "PDiff Resistor"))/2
+L=res_area/W
+R = res * L/W
+
+]
+
+
+DEVICE R() "SB NDiff Resistor" ndiff(POS) ndiff(NEG)
+	BY NET
+[
+	res_area=area("SB NDiff Resistor")
+W=(perim_co(POS, "SB NDiff Resistor")+perim_co(NEG, "SB NDiff Resistor"))/2
+L=res_area/W
+R = res * L/W
+
+]
+
+
+DEVICE R() "SB PDiff Resistor" pdiff(POS) pdiff(NEG)
+	BY NET
+[
+	res_area=area("SB PDiff Resistor")
+W=(perim_co(POS, "SB PDiff Resistor")+perim_co(NEG, "SB PDiff Resistor"))/2
+L=res_area/W
+R = res * L/W
+
+]
+
+
+DEVICE R() "NWell Resistor" "n well wire"(POS) "n well wire"(NEG)
+	BY NET
+[
+	res_area=area("NWell Resistor")
+W=(perim_co(POS, "NWell Resistor")+perim_co(NEG, "NWell Resistor"))/2
+L=res_area/W
+R = res * L/W
+
+]
+
+
+DEVICE X(NMOS_DEEP) "ntran Deep" ndiff(Drain) PolyWire(Gate) ndiff(Source) "P Well"(Bulk) "Deep N Well Wire"(IsolationBulk)
+	BY SHAPE
+[
+	property L, W, AREA_Drain, PERI_Drain, AREA_Source, PERI_Source
+lp=perimeter("ntran Deep")
+la=area("ntran Deep")
+L=(lp+sqrt(lp*lp-16*la))/4
+W=(lp-sqrt(lp*lp-16*la))/4
+na=1
+AREA_Drain=area(Drain)/na
+PERI_Drain=perimeter(Drain)
+AREA_Source=area(Source)/na
+PERI_Source=perimeter(Source)
+
+]
+#endif

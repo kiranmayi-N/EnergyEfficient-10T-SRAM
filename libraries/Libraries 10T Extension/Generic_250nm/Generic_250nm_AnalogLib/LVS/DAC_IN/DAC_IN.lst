@@ -1,0 +1,75 @@
+File is written by LVS v16.00 on 02/14/13 12:10:56.
+Node and elements after first round of iterations.
+
+Perfectly matched nodes
+=======================
+
+File: DAC_IN.spc                <==>  DAC_IN.spv                    
+========================
+-----------------------
+
+Other nodes
+=======================
+
+-----------------------
+Vout                          
+Adjust_In                     
+	VOUT                          
+	ADJUST_IN                     
+
+-----------------------
+
+
+Perfectly matched elements
+=======================
+
+File: DAC_IN.spc                <==>  DAC_IN.spv                    
+=======================
+R(XU10/X6/X1)_Merged_Elements   <==>  R(XR1)                        
+-----------------------
+
+Other elements
+=======================
+
+-----------------------
+
+-----------------------
+
+==============================================================================
+
+Node and elements after trial matching and second round of iterations.
+
+Perfectly matched nodes
+=======================
+
+File: DAC_IN.spc                <==>  DAC_IN.spv                    
+========================
+Adjust_In                       <==>  ADJUST_IN                     
+Vout                            <==>  VOUT                          
+-----------------------
+
+Other nodes
+=======================
+
+-----------------------
+
+-----------------------
+
+
+Perfectly matched elements
+=======================
+
+File: DAC_IN.spc                <==>  DAC_IN.spv                    
+=======================
+R(XU10/X6/X1)_Merged_Elements   <==>  R(XR1)                        
+-----------------------
+
+Other elements
+=======================
+
+-----------------------
+
+-----------------------
+
+==============================================================================
+

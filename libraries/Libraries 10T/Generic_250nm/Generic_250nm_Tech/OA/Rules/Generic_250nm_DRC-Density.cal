@@ -1,0 +1,48 @@
+TITLE	"Generic 0.25 um Process"
+
+//	Setup Info
+PRECISION	1000
+RESOLUTION	5
+UNIT LENGTH	u
+
+DRC TOLERANCE FACTOR 0.005
+
+//	Input Layers
+LAYER	Poly				 800
+LAYER MAP 8 DATATYPE 0 800
+
+LAYER	Metal1			1200
+LAYER MAP 12 DATATYPE 0 1200
+
+LAYER	Metal2			1400
+LAYER MAP 14 DATATYPE 0 1400
+
+LAYER	Metal3			1600
+LAYER MAP 16 DATATYPE 0 1600
+
+LAYER	TCP				18
+
+LAYER	Metal4			1900
+LAYER MAP 19 DATATYPE 0 1900
+
+//	Rules
+
+3.6a { @ Poly Density
+	DENSITY Poly > 0 < 0.15 TRUNCATE
+}
+ 
+7.5a { @ Metal1 Density
+	DENSITY Metal1 > 0 < 0.3 TRUNCATE
+}
+
+9.5a { @ Metal2 Density
+	DENSITY Metal2 > 0 < 0.3 TRUNCATE
+}
+
+15.5a { @ Metal3 Density
+	DENSITY Metal3 > 0 < 0.3 WINDOW 30 STEP 15 BACKUP
+}
+
+22.5a { @ Metal4 Density 
+	DENSITY Metal4 > 0 < 0.3 TRUNCATE 
+}

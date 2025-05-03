@@ -1,0 +1,493 @@
+TITLE	"Generic 0.25 um Process"
+
+//	Setup Info
+PRECISION	1000
+RESOLUTION	5
+UNIT LENGTH	u
+
+FLAG SKEW YES
+FLAG OFFGRID YES
+DRC TOLERANCE FACTOR 0.005
+
+DMACRO METAL_OVERLAP_CHECK sMetalLayer sViaLayer nOverlapAmount {
+	ENC sViaLayer sMetalLayer < nOverlapAmount ABUT OUTSIDE ALSO SINGULAR  
+   A = ENC sViaLayer sMetalLayer < nOverlapAmount/0.6 OPPOSITE REGION
+   B = sViaLayer COINCIDENT OUTSIDE EDGE A
+   C = INTERNAL B < nOverlapAmount/0.6 ABUT ==90 REGION
+   sViaLayer INTERACT C
+}
+
+//	Input Layers
+LAYER	NWell				 1
+LAYER	DeepNWell		 2
+LAYER	PWell				 3
+LAYER	Active			 4
+LAYER	ThickActive		 5
+LAYER	NImplant			 6
+LAYER	PImplant			 7
+LAYER	Poly				 8
+LAYER	SilicideBlock	 9
+LAYER	Contact			11
+LAYER	Metal1			12
+LAYER	Via1				13
+LAYER	Metal2			14
+LAYER	Via2				15
+LAYER	Metal3			16
+LAYER	Via3				17
+LAYER	TCP				18
+LAYER	Metal4			19
+LAYER	Passivation		20
+LAYER	ResistorID		21
+
+TEXT LAYER Poly Metal1 Metal2 Metal3 Metal4
+
+Implant = NImplant OR PImplant
+Field = Active NOT Poly
+diff = Field NOT ResistorID
+pdiff = diff AND PImplant 
+ndiff = diff AND NImplant 
+nActive = Active AND NImplant 
+pActive = Active AND PImplant 
+SubActive = pActive NOT DeepNWell
+ActiveContact = (Active OR ThickActive) AND Contact
+Gate = Poly AND Active 
+HVGate = Gate AND ThickActive 
+Via3NoCap = Via3 NOT TCP
+PolyNoRes = (Poly NOT ResistorID) NOT SilicideBlock
+
+//CONNECT WellTie NWell
+SCONNECT ndiff NWell
+//CONNECT Metal1 WellTie
+CONNECT ndiff Metal1 BY Contact
+CONNECT PolyNoRes Metal1 BY Contact
+CONNECT Metal1 Metal2 BY Via1
+CONNECT Metal2 Metal3 BY Via2
+CONNECT Metal3 Metal4 BY Via3NoCap
+
+//VIRTUAL CONNECT NAME Vdd
+
+//	Well Rules
+NW_1 { @ N Well Minimum Width < 1.45 Microns
+	INT NWell <1.45 ABUT <90 SINGULAR  
+}
+NW_2 { @ N Well to N Well Spacing < 0.75 Microns
+	EXT NWell <0.75 ABUT <90 SINGULAR  
+}
+NW_3 { @ N Well to N Well Spacing of different potential < 1.25 Microns
+	EXT NWell <1.25 ABUT <90 SINGULAR NOT CONNECTED
+}
+
+NW_4 { @ NWells without well ties or well ties connected to multiple nets (Soft connected).
+	WellTie = ndiff AND Contact
+	x = STAMP NWell BY WellTie
+	NWell NOT x
+}
+
+//NW_5 { @ NWell not connected to POWER
+//	NWellVdd = NWell NET Vdd
+//	NWell NOT NWellVdd
+//}
+
+DNW_1 { @ Deep N Well Minimum Width < 4 Microns
+	INT DeepNWell <4.00 ABUT <90 SINGULAR  
+}
+DNW_2 { @ Deep N Well to Deep N Well Spacing < 6.5 Microns
+	EXT DeepNWell < 6.50 ABUT <90 SINGULAR  
+}
+DNW_3 { @ Deep N Well to N Well Spacing < 4.75 Microns
+	EXT NWell DeepNWell >0 <4.75 ABUT <90 SINGULAR  
+}
+DNW_4 { @ N Well Overlap Deep N Well < 1.75 Microns
+	INT DeepNWell NWell >0 <1.75 ABUT <90 SINGULAR  
+}
+DNW_5 { @ N Well Extension beyond Deep N Well < 1.5 Microns
+	ENC NWell DeepNWell <1.50 ABUT <90 SINGULAR  
+}
+PW_1 { @ P Well Minimum Width < 1.45 Microns
+	INT PWell <1.45 ABUT <90 SINGULAR  
+}
+PW_2 { @ P Well to P Well Spacing < 0.75 Microns
+	EXT PWell <0.75 ABUT <90 SINGULAR  
+}
+
+// Active Rules
+2.1a { @ Active Minimum Width < 0.35 Microns
+	INT Active <0.35 ABUT <90 SINGULAR  
+}
+2.2a { @ Active to Active Spacing < 0.35 Microns
+	EXT Active <0.35 ABUT <90 SINGULAR  
+}
+2.3a { @ PMOS Source/Drain spacing to Well Edge < 0.75 Microns
+	ENC pdiff NWell <0.75 ABUT <90 SINGULAR  
+	pdiff CUT NWell  
+}
+2.3b { @ NMOS Source/Drain spacing to Well < 0.75 Microns
+	EXT ndiff NWell <0.75 ABUT <90 SINGULAR  
+	ndiff CUT NWell  
+}
+2.4a { @ Well Contact to Well Edge < 0.35 Microns
+	ENC nActive NWell <0.35 ABUT <90 SINGULAR  
+	nActive CUT NWell  
+}
+2.4b { @ Substrate Contact to Well Spacing < 0.35 Microns
+	EXT SubActive NWell <0.35 ABUT <90 SINGULAR  
+	SubActive CUT NWell  
+}
+
+AllMetal1 = FLATTEN Metal1
+
+// Poly Rules
+3.1a { @ Poly Minimum Width < 0.25 Microns
+	INT Poly <0.25 ABUT <90 SINGULAR  
+}
+
+BiasMOS_Gate = Gate WITH TEXT "BiasMOS"
+
+3.1b { @ Gate Width of Bias MOSFETs have to be at least 14.0um
+	BiasMOS_GateWidth = BiasMOS_Gate COINCIDENT EDGE Poly
+	LENGTH BiasMOS_GateWidth < 14.0
+}
+
+3.1c { @ Gate Length of Bias MOSFETs have to be at least 0.3 um - Approach 1
+	BiasMOS_GateLength = BiasMOS_Gate COINCIDENT INSIDE EDGE Active
+	LENGTH BiasMOS_GateLength < 0.30
+}
+
+3.1d { @ Gate Length of Bias MOSFETs have to be at least 0.3 um - Approach 2
+	BiasMOS_GateWidth = BiasMOS_Gate COINCIDENT EDGE Poly
+	INT BiasMOS_GateWidth < 0.30
+}
+
+3.2a { @ Poly to Poly Spacing < 0.35 Microns
+	EXT Poly <0.35 ABUT <90 SINGULAR  
+}
+3.2b { @ Poly to Poly Spacing Over Active < 0.5 Microns
+	EXT Gate <0.50 SINGULAR  
+}
+3.3 { @ Gate Extension out of Active < 0.3 Microns
+	ENC Active Poly <0.30 ABUT <90 SINGULAR  
+}
+3.4 { @ Source/Drain Length < 0.5 Microns
+	ENC Poly Active <0.50 ABUT <90 SINGULAR  
+}
+3.5 { @ Poly to Active Spacing < 0.2 Microns
+	EXT Poly Active <0.20 ABUT <90 SINGULAR  
+}
+
+// Implant Rules
+4.1 { @ Active to Implant Edge < 0.25 Microns
+	ENC Active Implant <0.25 ABUT <90 SINGULAR  
+}
+4.2 { @ Implant Edge to Active Contact < 0.15 Microns
+	ENC ActiveContact Implant <0.15 ABUT <90 SINGULAR  
+	ActiveContact CUT Implant  
+}
+4.3a { @ N Implant Minimum Width < 0.5 Microns
+	INT NImplant <0.50 ABUT <90 SINGULAR  
+}
+4.3b { @ P Implant Minimum Width < 0.5 Microns
+	INT PImplant <0.50 ABUT <90 SINGULAR  
+}
+4.3c { @ N Implant Spacing < 0.5 Microns
+	EXT NImplant <0.50 ABUT <90 SINGULAR  
+}
+4.3d { @ P Implant Spacing < 0.5 Microns
+	EXT PImplant <0.50 ABUT <90 SINGULAR  
+}
+4.4 { @ P Implant cannot overlap N Implant
+	AND PImplant NImplant
+}
+4.6a { @ Active cannot exist without Implant
+	Active NOT Implant
+}
+
+// Contact Rules
+5.1 { @ Contact Exact Size of 0.25 Microns
+	NOT RECTANGLE Contact ==0.25 by ==0.25 
+}
+5.2 { @ Poly overlap of Contact < 0.15 Microns
+	ENC Contact Poly <0.15 ABUT <90 SINGULAR  
+	Contact CUT Poly  
+}
+5.3 { @ Contact to Contact Spacing < 0.4 Microns
+	EXT Contact <0.40 ABUT <90 SINGULAR  
+}
+5.4 { @ Contact to Gate Spacing < 0.25 Microns
+	EXT Contact Gate <0.25 ABUT ==0 SINGULAR INSIDE ALSO
+}
+5.5 { @ Active Overlap of Contact < 0.15 Microns
+	ENC Contact Field <0.15 ABUT <90 SINGULAR INSIDE ALSO
+}
+
+// With MACROs
+//8.3m { @ Metal1 Overlap of Via1 < 0.15um, End of Line Overlap <0.25um
+//	CMACRO METAL_OVERLAP_CHECK Metal1 Via1 0.15
+//}
+//9.3m { @ Metal2 Overlap of Via1 < 0.15um, End of Line Overlap <0.25um
+//	CMACRO METAL_OVERLAP_CHECK Metal2 Via1 0.15
+//}
+//14.3m { @ Metal2 Overlap of Via2 < 0.15um, End of Line Overlap <0.25um
+//	CMACRO METAL_OVERLAP_CHECK Metal2 Via2 0.15
+//}
+//15.3m { @ Metal3 Overlap of Via2 < 0.15um, End of Line Overlap <0.25um
+//	CMACRO METAL_OVERLAP_CHECK Metal3 Via2 0.15
+//}
+//21.3m { @ Metal3 Overlap of Via3 < 0.15um, End of Line Overlap <0.25um
+//	CMACRO METAL_OVERLAP_CHECK Metal3 Via3 0.15
+//}
+//22.3m { @ Metal4 Overlap of Via3 < 0.15um, End of Line Overlap <0.25um
+//	CMACRO METAL_OVERLAP_CHECK Metal4 Via3 0.15
+//}
+
+// Without MACROs
+//8.3a { @ Metal1 Overlap of Via1 < 0.15 Microns
+//	ENC Via1 Metal1 <0.10 ABUT OUTSIDE ALSO SINGULAR  
+//}
+//8.3b { @ Metal1 end of line Overlap of Via1 < 0.25 Microns
+//   A = ENC [Via1] Metal1 <0.25 OPPOSITE
+//   B = INTERNAL A <0.25 ABUT ==90 REGION
+//   Via1 INTERACT B
+//}
+//9.3a { @ Metal2 Overlap of Via1 < 0.15 Microns
+//	ENC Via1 Metal2 < 0.15 ABUT OUTSIDE ALSO SINGULAR   
+//}
+//9.3b { @ Metal2 end of line Overlap of Via1 < 0.25 Microns
+//   A = ENC [Via1] Metal2 <0.15 OPPOSITE
+//   B = INTERNAL A <0.25 ABUT ==90 REGION
+//   Via1 INTERACT B
+//}
+//14.3a { @ Metal2 overlap of Via2 < 0.15 Microns
+//	ENC Via2 Metal2 < 0.15 ABUT OUTSIDE ALSO SINGULAR
+//}
+//14.3b { @ Metal2 end of line Overlap of Via2 < 0.25 Microns
+//   A = ENC [Via2] Metal2 <0.15 OPPOSITE
+//   B = INTERNAL A <0.25 ABUT ==90 REGION
+//   Via2 INTERACT B
+//}
+//15.3a { @ Metal3 Overlap of Via2 < 0.15 Microns
+//	ENC Via2 Metal3 < 0.15 ABUT OUTSIDE ALSO SINGULAR   
+//}
+//15.3b { @ Metal3 end of line Overlap of Via2 < 0.25 Microns
+//   A = ENC [Via2] Metal3 <0.15 OPPOSITE
+//   B = INTERNAL A <0.25 ABUT ==90 REGION
+//   Via2 INTERACT B
+//}
+//21.3a { @ Metal3 Overlap of Via3 < 0.15 Microns
+//	ENC Via3 Metal3 < 0.15 ABUT OUTSIDE ALSO SINGULAR
+//}
+//21.3b { @ Metal3 end of line Overlap of Via3 < 0.25 Microns
+//   A = ENC [Via3] Metal3 <0.15 OPPOSITE
+//   B = INTERNAL A <0.25 ABUT ==90 REGION
+//   Via3 INTERACT B
+//}
+//22.3a { @ Metal4 Overlap of Via3 < 0.15 Microns
+//	ENC Via3 Metal4 < 0.15 ABUT OUTSIDE ALSO SINGULAR
+//}
+//22.3b { @ Metal4 end of line Overlap of Via3 < 0.25 Microns
+//   A = ENC [Via3] Metal4 <0.15 OPPOSITE
+//   B = INTERNAL A <0.25 ABUT ==90 REGION
+//   Via3 INTERACT B
+//}
+
+// Metal1 Rules
+7.1 { @ Metal1 Minimum Width < 0.35 Microns
+	INT Metal1 < 0.35 ABUT <90 SINGULAR  
+}
+7.2a { @ Metal1 to Metal1 Spacing < 0.35 Microns
+	EXT Metal1 < 0.35 ABUT <90 SINGULAR  
+}
+7.2b { @ Metal1 to Metal1 larger than 8.0um spacing < 0.75 Microns
+	WideMetal1 = SIZE Metal1 by 4 UNDEROVER
+	EXT Metal1 WideMetal1 <0.75 SINGULAR  
+}
+7.3 { @ Metal1 Overlap of Contact < 0.1 Microns
+	ENC Contact Metal1 < 0.1 ABUT<90 OVERLAP OUTSIDE ALSO SINGULAR
+}
+
+// Via1 Rules
+8.1 { @ Via1 Exact Size of 0.35 Microns
+	NOT RECTANGLE Via1 ==0.35 by ==0.35 
+}
+8.2 { @ Via1 to Via1 Spacing < 0.35 Microns
+	EXT Via1 <0.35 ABUT <90 SINGULAR  
+}
+
+8.3 { @ Metal1 Overlap of Via1 < 0.15 Microns
+	 ENC  Via1  Metal1 < 0.15 ABUT<90 OVERLAP OUTSIDE ALSO SINGULAR
+}
+
+//8.4 { @ Via1 to Poly Spacing < 0.25 Microns
+//	 EXT  Via1  Poly > 0 < 0.25 ABUT > 0 < 90 SINGULAR 
+//}
+//8.5 { @ Via1 to Active Spacing < 0.25 Microns
+//	 EXT  Via1  Active > 0 < 0.25 ABUT > 0 < 90 SINGULAR 
+//}
+
+//8.3c { @ Metal1 end of line Overlap of Via1 < 0.25 Microns
+//   RECTANGLE ENCLOSURE Via1 AllMetal1 
+//	GOOD 0.25 OPPOSITE 0.15 OPPOSITE 0.25 OPPOSITE 0.15 OPPOSITE
+//	GOOD 0.30 OPPOSITE 0.10 OPPOSITE 0.30 OPPOSITE 0.10 OPPOSITE
+//}
+
+// Metal2 Rules
+9.1a { @ Metal2 Minimum Width < 0.35 Microns
+	INT Metal2 <0.35 ABUT <90 SINGULAR  
+}
+9.2a { @ Metal2 to Metal2 Spacing < 0.5 Microns
+	EXT Metal2 <0.50 SINGULAR  
+}
+9.2b { @ Metal2 to Metal2 larger than 8.0um spacing < 0.75 Microns
+	WideMetal2 = SIZE Metal2 by 4.00 UNDEROVER
+	EXT Metal2 WideMetal2 <0.75 SINGULAR  
+}
+9.2c { @ Metal2 to Metal2 spacing when for edges longer than 10.0 um < 0.60 Microns
+	EXT Metal2 <0.60 PROJ >10.00 SINGULAR  
+}
+9.3 { @ Metal2 Overlap of Via1 < 0.15 Microns
+	ENC Via1 Metal2 < 0.15 ABUT<90 OVERLAP OUTSIDE ALSO SINGULAR
+}
+
+// Passivation Rules
+10.1 { @ Bonding Area: OverGlass (60x60um) = 60 Microns
+	NOT RECTANGLE Passivation == 60 by == 60 
+}
+10.2 { @ Pad metal overlap of passivation < 6 Microns
+	ENC Passivation Metal4 < 6 ABUT == 0 INSIDE ALSO OUTSIDE ALSO SINGULAR REGION REVERSAL  
+}
+"Metal4 - Pad" = ENCLOSE Metal4 Passivation  
+10.3a { @ Pad to Unrelated-Metal4 Space(30um) < 30 Microns
+	EXT "Metal4 - Pad" Metal4 < 30 ABUT <90 SINGULAR  
+}
+10.3b { @ Pad to Unrelated-Metal3 Space(30um) < 30 Microns
+	EXT "Metal4 - Pad" Metal3 < 30 ABUT <90 SINGULAR  
+}
+10.3c { @ Pad to Unrelated-Metal2 Space(30um) < 30 Microns
+	EXT "Metal4 - Pad" Metal2 < 30 ABUT <90 SINGULAR  
+}
+10.3d { @ Pad to Unrelated-Metal1 (30um) < 30 Microns
+	EXT "Metal4 - Pad" Metal1 < 30 ABUT <90 SINGULAR  
+}
+10.4a { @ Pad to Unrelated-Poly Space (15um) < 15 Microns
+	EXT "Metal4 - Pad" Poly < 15 ABUT <90 INSIDE ALSO SINGULAR REGION REVERSAL  
+}
+10.4b { @ Pad to Unrelated-Act Space (15um) < 15 Microns
+	EXT "Metal4 - Pad" Active < 15 ABUT <90 INSIDE ALSO SINGULAR REGION REVERSAL  
+}
+
+// Via2 Rules
+14.1 { @ Via2 Exact Size of = 0.35 Microns
+	NOT RECTANGLE Via2 ==0.35 by ==0.35 
+}
+14.2 { @ Via2 to Via2 Spacing < 0.35 Microns
+	EXT Via2 <0.35 ABUT <90 SINGULAR  
+}
+
+14.3 { @ Metal2 Overlap of Via2 < 0.15 Microns
+	ENC Via2 Metal2 < 0.15 ABUT<90 OVERLAP OUTSIDE ALSO SINGULAR
+}
+
+// Metal3 Rules
+15.1 { @ Metal3 Minimum Width < 0.35 Microns
+	INT Metal3 <0.35 ABUT <90 SINGULAR  
+}
+15.2a { @ Metal3 to Metal3 Spacing < 0.5 Microns
+	EXT Metal3 <0.5 ABUT <90 SINGULAR  
+}
+15.2b { @ Metal3 to Metal3 larger than 8.0um spacing < 0.75 Microns
+	WideMetal3 = SIZE Metal3 by 4.00 UNDEROVER
+	EXT Metal3 WideMetal3 <0.75 SINGULAR  
+}
+15.2c { @ Metal3 to Metal3 spacing when for edges longer than 10.0 um < 0.60 Microns
+	EXT Metal3 <0.60 PROJ >10.00 SINGULAR  
+}
+15.3 { @ Metal3 Overlap of Via2 < 0.15 Microns
+	ENC Via2 Metal3 < 0.15 ABUT<90 OVERLAP OUTSIDE ALSO SINGULAR
+}
+
+// Silicide Block Rules
+20.1 { @ Silicide Block Minimum Width < 0.5 Microns
+	INT SilicideBlock < 0.5 SINGULAR  
+}
+20.2 { @ Silicide Block Minimum Spacing < 0.5 Microns
+	EXT SilicideBlock < 0.5 SINGULAR  
+}
+20.3 { @ Silicide Block Min Spacing to Contact < 0.25 Microns
+	EXT SilicideBlock Contact < 0.25 ABUT == 0 INSIDE ALSO SINGULAR REGION REVERSAL  
+}
+20.4 { @ Silicide Block Min Spacing to External Active < 0.25 Microns
+	EXT Active SilicideBlock < 0.25 ABUT == 0 SINGULAR  
+}
+20.5 { @ Silicide Block Min Spacing to External Poly < 0.25 Microns
+	EXT Poly SilicideBlock < 0.25 SINGULAR  
+	INSIDE Poly SilicideBlock
+}
+"Poly Silicide Block Resistor" = (Poly AND SilicideBlock) AND ResistorID 
+20.6 { @ Silicide Block Min Poly width < 0.6 Microns
+	INT "Poly Silicide Block Resistor" < 0.6 SINGULAR  
+}
+20.7 { @ Silicide Block Min Spacing of Poly resistors in Silicide Block region < 0.35 Microns
+	EXT "Poly Silicide Block Resistor" < 0.35 SINGULAR  
+}
+//20.8a { @ Silicide Block Min overlap of Poly < 0.25 Microns
+//	ENC "Poly Silicide Block Resistor" SilicideBlock > 0 < 0.25 ABUT <90 SINGULAR  
+//	OUTSIDE "Poly Silicide Block Resistor" SilicideBlock
+//}
+20.8b { @ Silicide Block overlap of active < 0.25 Microns
+	ENC Active SilicideBlock < 0.25 ABUT <90 SINGULAR  
+}
+20.9a { @ Poly extend out of Silicide Block < 0.35 Microns
+	ENC SilicideBlock Poly < 0.35 ABUT <90 SINGULAR  
+}
+20.9b { @ Active extend out of Silicide Block < 0.35 Microns
+	ENC SilicideBlock Active < 0.35 ABUT <90 SINGULAR  
+}
+20.10 { @ Min spacing Silicide Block to gate < 0.6 Microns
+	EXT Gate SilicideBlock < 0.6 ABUT <90 INSIDE ALSO SINGULAR REGION REVERSAL  
+}
+
+// Via3 Rules
+21.1 { @ Via3 Exact Size = 0.35 Microns
+	NOT RECTANGLE Via3 ==0.35 by ==0.35 
+}
+21.2 { @ Via3 to Via3 Spacing < 0.35 Microns
+	EXT Via3 <0.35 SINGULAR  
+}
+21.3 { @ Metal3 Overlap of Via3 < 0.15 Microns
+	ENC Via3 Metal3 < 0.15 ABUT<90 OVERLAP OUTSIDE ALSO SINGULAR
+}
+
+// Metal4 Rules
+22.1 { @ Metal4 Minimum Width < 0.35 Microns
+	INT Metal4 <0.35 SINGULAR  
+}
+22.2a { @ Metal4 to Metal4 Spacing < 0.5 Microns
+	EXT Metal4 <0.50 SINGULAR  
+}
+22.2b { @ Metal4 to Metal4 larger than 8.0um spacing < 0.75 Microns
+	WideMetal4 = SIZE Metal4 by 4.00 UNDEROVER
+	EXT Metal4 WideMetal4 <0.75 SINGULAR  
+}
+22.2c { @ Metal4 to Metal4 spacing when for edges longer than 10.0 um < 0.60 Microns
+	EXT Metal4 <0.60 PROJ >10.00 SINGULAR  
+}
+22.3 { @ Metal4 Overlap of Via3 < 0.15 Microns
+	ENC Via3 Metal4 < 0.15 ABUT<90 OVERLAP OUTSIDE ALSO SINGULAR
+}
+
+// Thick Active Rules
+24.1 { @ Thick Active Minimum Width < 0.5 Microns
+	INT ThickActive < 0.5 SINGULAR  
+}
+24.2 { @ Thick Active to Thick Active Spacing < 0.5 Microns
+	EXT ThickActive < 0.5 SINGULAR  
+}
+24.3 { @ Thick Active Overlap of Active < 0.5 Microns
+	ENC Active ThickActive < 0.5 ABUT == 0 SINGULAR  
+	CUT Active ThickActive  
+}
+24.4 { @ Thick Active to Active Spacing < 0.5 Microns
+	EXT ThickActive Active < 0.5 ABUT == 0 SINGULAR  
+}
+24.5 { @ Poly Width in HV gate < 0.35 Microns
+	INT HVGate < 0.35 SINGULAR  
+}

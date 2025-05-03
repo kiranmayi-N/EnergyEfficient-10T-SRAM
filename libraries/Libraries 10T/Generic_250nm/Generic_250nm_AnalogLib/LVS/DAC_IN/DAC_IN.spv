@@ -1,0 +1,38 @@
+* SPICE export by:  S-Edit 16.00
+* Export time:      Thu Feb 14 12:03:29 2013
+* Design:           Generic_250nm_AnalogLib
+* Cell:             DAC_IN
+* Interface:        view_1
+* View:             view_1
+* View type:        connectivity
+* Export as:        top-level cell
+* Export mode:      hierarchical
+* Exclude empty cells: no
+* Exclude .model:   no
+* Exclude .end:     no
+* Exclude simulator commands:     no
+* Expand paths:     yes
+* Wrap lines:       no
+* Root path:        S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib
+* Exclude global pins:   no
+* Exclude instance locations: no
+* Control property name(s): LVS SPICE
+
+********* Simulation Settings - General Section *********
+.lib '../../../Generic_250nm_Tech/Generic_250nm.lib' LVS
+
+* Design: Generic_250nm_AnalogLib / Cell: DAC_IN / View: view_1 / Page: 
+* Designed by: 
+* Organization: 
+* Info: 
+* Date: 02/12/13 16:11:58
+* Revision: 16 $ $x=7600 $y=600 $w=3600 $h=1200
+***** Top Level *****
+XR1 ADJUST_IN VOUT rhp L=20u W=2u M=1 ; R=10.14k $ $x=4700 $y=3209 $w=600 $h=159
+
+********* Simulation Settings - Analysis Section *********
+
+********* Simulation Settings - Additional SPICE Commands *********
+
+.end
+

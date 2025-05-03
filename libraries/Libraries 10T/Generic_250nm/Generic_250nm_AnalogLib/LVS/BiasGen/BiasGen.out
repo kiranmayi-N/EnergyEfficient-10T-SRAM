@@ -1,0 +1,147 @@
+File written by LVS 16.00 as a result of: "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\BiasGen\BiasGen.vdb" on Thu Feb 14 18:22:18 2013
+
+Command line:
+lvs64 "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\BiasGen\BiasGen.spc" "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\BiasGen\BiasGen.spv" -o "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\BiasGen\BiasGen.out" -l "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\BiasGen\BiasGen.lst" -t "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\BiasGen\BiasGen_flat.spc" -h "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\BiasGen\BiasGen_flat.spv" -mr ALL -mc ALL -mm ALL -x -TTSPICE -nrclf -c128 -dv0.100 -dg0.100 -y2 -vf -fafpr 
+
+Engine configuration report:
+Layout netlist file.............................................. S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\BiasGen\BiasGen.spc
+Layout netlist file format....................................... T-Spice
+Schematic netlist file........................................... S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\BiasGen\BiasGen.spv
+Schematic netlist file format.................................... T-Spice
+Consider Bulk nodes.............................................. TRUE
+By default, FET S/D terminals are swappable...................... TRUE
+By default, BJT C/E terminals are swappable...................... FALSE
+By default, Resistors are polarized elements..................... FALSE
+By default, Capacitors are polarized elements.................... FALSE
+By default, Inductors are polarized elements..................... FALSE
+Merge series and parallel R...................................... ALL
+Merge series and parallel C...................................... ALL
+Merge series and parallel L...................................... OFF
+Merge parallel M................................................. ALL
+Merge stacked M.................................................. OFF
+Merge parallel D................................................. OFF
+Merge parallel B................................................. OFF
+Merge parallel J................................................. OFF
+Merge parallel Z................................................. OFF
+Merge parallel Q................................................. OFF
+Merge series MOSFETs............................................. OFF
+Find series MOSFETs that differ in order or parameter value...... OFF
+Remove shorted devices........................................... ON
+Remove disconnected devices...................................... OFF
+Fast Iteration................................................... OFF
+Parameter comparison threshold for CAPACITORS.................... 0.1%
+Parameter comparison threshold for INDUCTORS..................... 0.1%
+Parameter comparison threshold for RESISTORS..................... 0.1%
+Parameter comparison threshold for MOSFET GATE LENGTHS........... 0.1%
+Parameter comparison threshold for MOSFET GATE WIDTHS............ 0.1%
+Parameter comparison threshold for X PARAMETERS.................. 0.1%
+
+
+Parsing file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\BiasGen\BiasGen.spc...
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: LVS
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: GEN_LVS
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: Diodes
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: RES_CAP_GEN
+Warning: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib(98) Implicit resistor .model definition rhp_lvs
+Warning: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib(102) Implicit resistor .model definition rnp_lvs
+Warning: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib(106) Implicit capacitor .model definition MiM_lvs
+Warning: BiasGen.spc(18) Implicit mosfet .model definition PMOS25
+Warning: BiasGen.spc(43) Implicit mosfet .model definition NMOS25
+Flattening netlist...
+Flattening netlist (second pass)...
+
+Parsing file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\BiasGen\BiasGen.spv...
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: LVS
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: GEN_LVS
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: Diodes
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: RES_CAP_GEN
+Warning: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib(98) Implicit resistor .model definition rhp_lvs
+Warning: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib(102) Implicit resistor .model definition rnp_lvs
+Warning: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib(106) Implicit capacitor .model definition MiM_lvs
+Warning: BiasGen.spv(31) Node Gnd aliased to GROUND
+Warning: BiasGen.spv(33) Node 0 aliased to GROUND
+Warning: BiasGen.spv(33) Implicit mosfet .model definition NMOS25
+Warning: BiasGen.spv(37) Implicit mosfet .model definition PMOS25
+Flattening netlist...
+Flattening netlist (second pass)...
+
+Device                     BiasGen.spc       BiasGen.spv   Status            
+---------------        ---------------   ---------------   ---------------     
+M_NMOS25                             8                 4   MISMATCH (4)
+M_PMOS25                             8                 2   MISMATCH (6)
+C_MiM_lvs                            1                 1
+R_rnp_lvs                            3                 1   MISMATCH (2)
+                          ------------      ------------
+Total elements                      20                 8   MISMATCH (12)
+Total nodes                          7                 5   MISMATCH (2)
+
+
+Merging devices...
+Eliminated from BiasGen.spc:
+    11 parallel MOSFET(s)
+     2 series resistor(s)
+     2 node(s)
+Eliminated from BiasGen.spv:
+     1 parallel MOSFET(s)
+
+Writing BiasGen.spc to flat spice file: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\BiasGen\BiasGen_flat.spc
+
+Writing BiasGen.spv to flat spice file: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\BiasGen\BiasGen_flat.spv
+
+Device                     BiasGen.spc       BiasGen.spv   Status            
+---------------        ---------------   ---------------   ---------------     
+M_NMOS25                             3                 3
+M_PMOS25                             2                 2
+C_MiM_lvs                            1                 1
+R_rnp_lvs                            1                 1
+                          ------------      ------------
+Total elements                       7                 7
+Total nodes                          5                 5
+
+**************************** MERGED DEVICES *************************
+
+Merged devices in: BiasGen.spc
+    M8(XU20)_Merged_Elements = M8(XU20), M2(XU20), M1(XU20), M7(XU20)
+    M3(XU20)_Merged_Elements = M3(XU20), M4(XU20), M5(XU20), M6(XU20)
+    M3(XU22)_Merged_Elements = M3(XU22), M2(XU22), M5(XU22), M4(XU22)
+    M1(XXM1n)_Merged_Elements = M1(XXM1n), M2(XXM1n)
+    M6(XU22)_Merged_Elements = M6(XU22), M1(XU22)
+    R(XXR1/X3)_Merged_Elements = R(XXR1/X3), R(XXR1/X2), R(XXR1/X1)
+
+Merged devices in: BiasGen.spv
+    MM3n_Merged_Elements = MM3n, MM2n
+
+
+****************** DETAILED PROCESSING INFORMATION ******************
+
+**************************** ITERATING ******************************
+
+Iterating...
+  5% done.
+ 10% done.
+ 15% done.
+ 20% done.
+ 25% done.
+ 30% done.
+ 35% done.
+ 40% done.
+ 45% done.
+ 50% done.
+ 55% done.
+ 60% done.
+ 65% done.
+ 70% done.
+ 75% done.
+ 80% done.
+ 85% done.
+ 90% done.
+ 95% done.
+100% done.
+
+************************** FINAL RESULT *****************************
+
+Note: Devices have been merged.
+Circuits are equal.
+Run time: 0:01 (min:sec)
+
+0 errors, 12 warnings

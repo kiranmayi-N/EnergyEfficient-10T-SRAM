@@ -1,0 +1,273 @@
+File written by LVS 16.00 as a result of: "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\R2RDAC8\R2RDAC8.vdb" on Thu Feb 14 14:54:37 2013
+
+Command line:
+lvs64 "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\R2RDAC8\R2RDAC8.spc" "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\R2RDAC8\R2RDAC8.spv" -o "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\R2RDAC8\R2RDAC8.out" -l "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\R2RDAC8\R2RDAC8.lst" -t "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\R2RDAC8\R2RDAC8_flat.spc" -h "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\R2RDAC8\R2RDAC8_flat.spv" -mr ALL -mc ALL -mm ALL -x -TTSPICE -nrclf -c128 -dv0.100 -dg0.100 -y2 -vf -fafpr 
+
+Engine configuration report:
+Layout netlist file.............................................. S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\R2RDAC8\R2RDAC8.spc
+Layout netlist file format....................................... T-Spice
+Schematic netlist file........................................... S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\R2RDAC8\R2RDAC8.spv
+Schematic netlist file format.................................... T-Spice
+Consider Bulk nodes.............................................. TRUE
+By default, FET S/D terminals are swappable...................... TRUE
+By default, BJT C/E terminals are swappable...................... FALSE
+By default, Resistors are polarized elements..................... FALSE
+By default, Capacitors are polarized elements.................... FALSE
+By default, Inductors are polarized elements..................... FALSE
+Merge series and parallel R...................................... ALL
+Merge series and parallel C...................................... ALL
+Merge series and parallel L...................................... OFF
+Merge parallel M................................................. ALL
+Merge stacked M.................................................. OFF
+Merge parallel D................................................. OFF
+Merge parallel B................................................. OFF
+Merge parallel J................................................. OFF
+Merge parallel Z................................................. OFF
+Merge parallel Q................................................. OFF
+Merge series MOSFETs............................................. OFF
+Find series MOSFETs that differ in order or parameter value...... OFF
+Remove shorted devices........................................... ON
+Remove disconnected devices...................................... OFF
+Fast Iteration................................................... OFF
+Parameter comparison threshold for CAPACITORS.................... 0.1%
+Parameter comparison threshold for INDUCTORS..................... 0.1%
+Parameter comparison threshold for RESISTORS..................... 0.1%
+Parameter comparison threshold for MOSFET GATE LENGTHS........... 0.1%
+Parameter comparison threshold for MOSFET GATE WIDTHS............ 0.1%
+Parameter comparison threshold for X PARAMETERS.................. 0.1%
+
+
+Parsing file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\R2RDAC8\R2RDAC8.spc...
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: LVS
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: GEN_LVS
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: Diodes
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: RES_CAP_GEN
+Warning: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib(98) Implicit resistor .model definition rhp_lvs
+Warning: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib(102) Implicit resistor .model definition rnp_lvs
+Warning: R2RDAC8.spc(18) Implicit mosfet .model definition PMOS25
+Warning: R2RDAC8.spc(28) Implicit mosfet .model definition NMOS25
+Flattening netlist...
+Flattening netlist (second pass)...
+
+Parsing file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\R2RDAC8\R2RDAC8.spv...
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: LVS
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: GEN_LVS
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: Diodes
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: RES_CAP_GEN
+Warning: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib(98) Implicit resistor .model definition rhp_lvs
+Warning: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib(102) Implicit resistor .model definition rnp_lvs
+Warning: R2RDAC8.spv(40) Implicit mosfet .model definition NMOS25
+Warning: R2RDAC8.spv(42) Implicit mosfet .model definition PMOS25
+Flattening netlist...
+Flattening netlist (second pass)...
+
+Device                     R2RDAC8.spc       R2RDAC8.spv   Status            
+---------------        ---------------   ---------------   ---------------     
+M_NMOS25                            32                16   MISMATCH (16)
+M_PMOS25                            32                16   MISMATCH (16)
+R_rhp_lvs                           54                17   MISMATCH (37)
+                          ------------      ------------
+Total elements                     118                49   MISMATCH (69)
+Total nodes                         69                36   MISMATCH (33)
+Single-pin nodes                     1                 1
+                          ------------      ------------
+Connected nodes                     68                35
+
+************************ SINGLE PIN NODES ***************************
+
+Nodes in file R2RDAC8.spc connected to only one pin
+Adj
+*********************
+
+Nodes in file R2RDAC8.spv connected to only one pin
+ADJ
+*********************
+
+
+Merging devices...
+Shorted element removed: R(XU13/XU10/X7/X1) (R2RDAC8.spc)
+Shorted element removed: R(XU13/XU10/X5/X1) (R2RDAC8.spc)
+Shorted element removed: R(XU13/XU10/X4/X1) (R2RDAC8.spc)
+Shorted element removed: R(XU13/XU10/X2/X1) (R2RDAC8.spc)
+Eliminated from R2RDAC8.spc:
+     4 shorted resistor(s)
+    32 parallel MOSFET(s)
+    35 series resistor(s)
+    35 node(s)
+Eliminated from R2RDAC8.spv:
+     2 series resistor(s)
+     2 node(s)
+
+Writing R2RDAC8.spc to flat spice file: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\R2RDAC8\R2RDAC8_flat.spc
+
+Writing R2RDAC8.spv to flat spice file: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\R2RDAC8\R2RDAC8_flat.spv
+
+Device                     R2RDAC8.spc       R2RDAC8.spv   Status            
+---------------        ---------------   ---------------   ---------------     
+M_NMOS25                            16                16
+M_PMOS25                            16                16
+R_rhp_lvs                           15                15
+                          ------------      ------------
+Total elements                      47                47
+Total nodes                         34                34
+Single-pin nodes                     1                 1
+
+************************ SINGLE PIN NODES ***************************
+
+Nodes in file R2RDAC8.spc connected to only one pin
+Adj
+*********************
+
+Nodes in file R2RDAC8.spv connected to only one pin
+ADJ
+*********************
+
+**************************** MERGED DEVICES *************************
+
+Merged devices in: R2RDAC8.spc
+    R(XU11/X7/XU10/X6/X1)_Merged_Elements = R(XU11/X7/XU10/X6/X1), R(XU11/X7/XU10/X3/X1)
+    M1(XU11/X4)_Merged_Elements = M1(XU11/X4), M1(XU11/X4/XU3), M2(XU11/X4/XU3)
+    R(XU11/X5/XU10/X6/X1)_Merged_Elements = R(XU11/X5/XU10/X6/X1), R(XU11/X5/XU10/X3/X1)
+    M3(XU11/X6)_Merged_Elements = M3(XU11/X6), M2(XU11/X6/XU5), M1(XU11/X6/XU5)
+    R(XU11/X3/XU10/X6/X1)_Merged_Elements = R(XU11/X3/XU10/X6/X1), R(XU11/X3/XU10/X3/X1)
+    M1(XU11/X6)_Merged_Elements = M1(XU11/X6), M2(XU11/X6/XU3), M1(XU11/X6/XU3)
+    R(XU11/X2/XU10/X4/X1)_Merged_Elements = R(XU11/X2/XU10/X4/X1), R(XU11/X2/XU10/X2/X1), R(XU11/X2/XU10/X5/X1), R(XU11/X2/XU10/X7/X1)
+    M3(XU11/X8)_Merged_Elements = M3(XU11/X8), M2(XU11/X8/XU5), M1(XU11/X8/XU5)
+    R(XU11/X8/XU10/X3/X1)_Merged_Elements = R(XU11/X8/XU10/X3/X1), R(XU11/X8/XU10/X6/X1)
+    M1(XU11/X3/XU3)_Merged_Elements = M1(XU11/X3/XU3), M2(XU11/X3/XU3), M1(XU11/X3)
+    R(XU11/X6/XU10/X3/X1)_Merged_Elements = R(XU11/X6/XU10/X3/X1), R(XU11/X6/XU10/X6/X1)
+    M1(XU11/X8)_Merged_Elements = M1(XU11/X8), M2(XU11/X8/XU3), M1(XU11/X8/XU3)
+    R(XU11/X4/XU10/X3/X1)_Merged_Elements = R(XU11/X4/XU10/X3/X1), R(XU11/X4/XU10/X6/X1)
+    M1(XU11/X3/XU5)_Merged_Elements = M1(XU11/X3/XU5), M2(XU11/X3/XU5), M3(XU11/X3)
+    R(XU11/X2/XU10/X3/X1)_Merged_Elements = R(XU11/X2/XU10/X3/X1), R(XU11/X2/XU10/X6/X1), R(XU13/XU10/X6/X1), R(XU13/XU10/X3/X1)
+    R(XU11/X8/XU10/X2/X1)_Merged_Elements = R(XU11/X8/XU10/X2/X1), R(XU11/X8/XU10/X4/X1), R(XU11/X8/XU10/X5/X1), R(XU11/X8/XU10/X7/X1)
+    R(XU11/X6/XU10/X2/X1)_Merged_Elements = R(XU11/X6/XU10/X2/X1), R(XU11/X6/XU10/X4/X1), R(XU11/X6/XU10/X5/X1), R(XU11/X6/XU10/X7/X1)
+    M2(XU11/X2/XU3)_Merged_Elements = M2(XU11/X2/XU3), M1(XU11/X2), M1(XU11/X2/XU3)
+    M2(XU11/X5/XU3)_Merged_Elements = M2(XU11/X5/XU3), M1(XU11/X5), M1(XU11/X5/XU3)
+    R(XU11/X3/XU10/X4/X1)_Merged_Elements = R(XU11/X3/XU10/X4/X1), R(XU11/X3/XU10/X2/X1), R(XU11/X3/XU10/X5/X1), R(XU11/X3/XU10/X7/X1)
+    R(XU11/X4/XU10/X2/X1)_Merged_Elements = R(XU11/X4/XU10/X2/X1), R(XU11/X4/XU10/X4/X1), R(XU11/X4/XU10/X5/X1), R(XU11/X4/XU10/X7/X1)
+    M2(XU11/X7/XU3)_Merged_Elements = M2(XU11/X7/XU3), M1(XU11/X7/XU3), M1(XU11/X7)
+    M2(XU11/X9/XU3)_Merged_Elements = M2(XU11/X9/XU3), M1(XU11/X9), M1(XU11/X9/XU3)
+    R(XU11/X7/XU10/X7/X1)_Merged_Elements = R(XU11/X7/XU10/X7/X1), R(XU11/X7/XU10/X5/X1), R(XU11/X7/XU10/X4/X1), R(XU11/X7/XU10/X2/X1)
+    R(XU11/X5/XU10/X7/X1)_Merged_Elements = R(XU11/X5/XU10/X7/X1), R(XU11/X5/XU10/X5/X1), R(XU11/X5/XU10/X4/X1), R(XU11/X5/XU10/X2/X1)
+    M2(XU11/X2/XU5)_Merged_Elements = M2(XU11/X2/XU5), M3(XU11/X2), M1(XU11/X2/XU5)
+    M2(XU11/X5/XU5)_Merged_Elements = M2(XU11/X5/XU5), M3(XU11/X5), M1(XU11/X5/XU5)
+    M2(XU11/X7/XU5)_Merged_Elements = M2(XU11/X7/XU5), M1(XU11/X7/XU5), M3(XU11/X7)
+    M2(XU11/X9/XU5)_Merged_Elements = M2(XU11/X9/XU5), M3(XU11/X9), M1(XU11/X9/XU5)
+    R(XU11/X9/XU10/X6/X1)_Merged_Elements = R(XU11/X9/XU10/X6/X1), R(XU11/X9/XU10/X3/X1), R(XU11/X9/XU10/X7/X1), R(XU11/X9/XU10/X5/X1), R(XU11/X9/XU10/X4/X1), R(XU11/X9/XU10/X2/X1)
+    M3(XU11/X4)_Merged_Elements = M3(XU11/X4), M1(XU11/X4/XU5), M2(XU11/X4/XU5)
+
+Merged devices in: R2RDAC8.spv
+    R(XXbit<7>/XR2)_Merged_Elements = R(XXbit<7>/XR2), R(XXbit<7>/XR1)
+    R(XXbit<0>/XR1)_Merged_Elements = R(XXbit<0>/XR1), R(XDAC_IN_1/XR1)
+
+
+****************** DETAILED PROCESSING INFORMATION ******************
+
+**************************** ITERATING ******************************
+
+Iterating...
+  5% done.
+ 10% done.
+ 15% done.
+ 20% done.
+ 25% done.
+ 30% done.
+ 35% done.
+ 40% done.
+ 45% done.
+ 50% done.
+ 55% done.
+ 60% done.
+ 65% done.
+ 70% done.
+ 75% done.
+ 80% done.
+ 85% done.
+ 90% done.
+********************* REPORTING  AUTOMORPHISM ***********************
+
+Report of elements:
+*******************
+
+1: Automorph class of elements
+1.1:    R2RDAC8.spc   M2(XU11/X8)          fanout: BULK = 31   D/S (  3,  31)   G =  1   
+1.2:    R2RDAC8.spc   M2(XU11/X9)          fanout: BULK = 31   D/S (  3,  31)   G =  1   
+1.1:    R2RDAC8.spv   MM1n(XXbit<7>)       fanout: BULK = 31   D/S (  3,  31)   G =  1   
+1.2:    R2RDAC8.spv   MM1n(XXbit<6>)       fanout: BULK = 31   D/S (  3,  31)   G =  1   
+---------------------------------------------------
+
+2: Automorph class of elements
+2.1:    R2RDAC8.spc   M4(XU11/X8)          fanout: BULK = 31   D/S (  3,  31)   G =  1   
+2.2:    R2RDAC8.spc   M4(XU11/X9)          fanout: BULK = 31   D/S (  3,  31)   G =  1   
+2.1:    R2RDAC8.spv   MM2p(XXbit<7>)       fanout: BULK = 31   D/S (  3,  31)   G =  1   
+2.2:    R2RDAC8.spv   MM2p(XXbit<6>)       fanout: BULK = 31   D/S (  3,  31)   G =  1   
+---------------------------------------------------
+
+3: Automorph class of elements
+3.1:    R2RDAC8.spc   M1(XU11/X8)_Merged_Elements fanout: BULK = 31   D/S (  2,  31)   G =  3   
+3.2:    R2RDAC8.spc   M2(XU11/X9/XU3)_Merged_Elements fanout: BULK = 31   D/S (  2,  31)   G =  3   
+3.1:    R2RDAC8.spv   MM3n(XXbit<6>)       fanout: BULK = 31   D/S (  2,  31)   G =  3   
+3.2:    R2RDAC8.spv   MM3n(XXbit<7>)       fanout: BULK = 31   D/S (  2,  31)   G =  3   
+---------------------------------------------------
+
+4: Automorph class of elements
+4.1:    R2RDAC8.spc   M3(XU11/X8)_Merged_Elements fanout: BULK = 31   D/S (  2,  31)   G =  3   
+4.2:    R2RDAC8.spc   M2(XU11/X9/XU5)_Merged_Elements fanout: BULK = 31   D/S (  2,  31)   G =  3   
+4.1:    R2RDAC8.spv   MM4p(XXbit<6>)       fanout: BULK = 31   D/S (  2,  31)   G =  3   
+4.2:    R2RDAC8.spv   MM4p(XXbit<7>)       fanout: BULK = 31   D/S (  2,  31)   G =  3   
+---------------------------------------------------
+
+5: Automorph class of elements
+5.1:    R2RDAC8.spc   R(XU11/X8/XU10/X2/X1)_Merged_Elements fanout: POS/NEG (  2,   2)   
+5.2:    R2RDAC8.spc   R(XU11/X9/XU10/X6/X1)_Merged_Elements fanout: POS/NEG (  2,   2)   
+5.1:    R2RDAC8.spv   R(XXbit<6>/XR2)      fanout: POS/NEG (  2,   2)   
+5.2:    R2RDAC8.spv   R(XXbit<7>/XR2)_Merged_Elements fanout: POS/NEG (  2,   2)   
+---------------------------------------------------
+
+Report of nodes:
+****************
+
+1: Automorph class of nodes
+1.0:    R2RDAC8.spc   B<7>                  connected to     1 M_NMOS25_G       1 M_PMOS25_G   
+1.0:    R2RDAC8.spc   B<6>                  connected to     1 M_NMOS25_G       1 M_PMOS25_G   
+1.0:    R2RDAC8.spv   B<7>                  connected to     1 M_NMOS25_G       1 M_PMOS25_G   
+1.0:    R2RDAC8.spv   B<6>                  connected to     1 M_NMOS25_G       1 M_PMOS25_G   
+---------------------------------------------------
+
+2: Automorph class of nodes
+2.0:    R2RDAC8.spc   bb(XU11/X8/)          connected to     1 M_NMOS25_D/S       1 M_NMOS25_G       1 M_PMOS25_D/S       1 M_PMOS25_G   
+2.0:    R2RDAC8.spc   bb(XU11/X9/)          connected to     1 M_NMOS25_D/S       1 M_NMOS25_G       1 M_PMOS25_D/S       1 M_PMOS25_G   
+2.0:    R2RDAC8.spv   bb(XXbit<6>/)         connected to     1 M_NMOS25_D/S       1 M_NMOS25_G       1 M_PMOS25_D/S       1 M_PMOS25_G   
+2.0:    R2RDAC8.spv   bb(XXbit<7>/)         connected to     1 M_NMOS25_D/S       1 M_NMOS25_G       1 M_PMOS25_D/S       1 M_PMOS25_G   
+---------------------------------------------------
+
+3: Automorph class of nodes
+3.0:    R2RDAC8.spc   b(XU11/X8/)           connected to     1 M_NMOS25_D/S       1 M_PMOS25_D/S       1 R_rhp_lvs_POS/NEG   
+3.0:    R2RDAC8.spc   b(XU11/X9/)           connected to     1 M_NMOS25_D/S       1 M_PMOS25_D/S       1 R_rhp_lvs_POS/NEG   
+3.0:    R2RDAC8.spv   b(XXbit<6>/)          connected to     1 M_NMOS25_D/S       1 M_PMOS25_D/S       1 R_rhp_lvs_POS/NEG   
+3.0:    R2RDAC8.spv   b(XXbit<7>/)          connected to     1 M_NMOS25_D/S       1 M_PMOS25_D/S       1 R_rhp_lvs_POS/NEG   
+---------------------------------------------------
+
+************************ ITERATION SUMMARY **************************
+
+37 perfectly matched element classes (out of a possible 47).
+5 automorphic element classes.
+28 perfectly matched node classes (out of a possible 34).
+3 automorphic node classes.
+
+
+********************* POST ITERATION MATCHING ***********************
+Doing detailed trial matching... Step 1 (Match by parameters)
+**************************** ITERATING ******************************
+ 95% done.
+100% done.
+Doing detailed trial matching... Step 2 (Random matches)
+
+************************** FINAL RESULT *****************************
+
+Note: Devices have been merged.
+Circuits are equal.
+Run time: 0:01 (min:sec)
+
+0 errors, 8 warnings

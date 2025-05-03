@@ -1,0 +1,4 @@
+DEFINE Generic_250nm_AnalogLib Generic_250nm_AnalogLib
+ASSIGN Generic_250nm_AnalogLib libMode shared
+DEFINE Generic_250nm_TechSetup ..\..\Generic_250nm_Tech\OA\Generic_250nm_TechSetup
+ASSIGN Generic_250nm_TechSetup libMode shared

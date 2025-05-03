@@ -1,0 +1,46 @@
+File is written by LVS v16.00 on 02/14/13 18:22:19.
+Node and elements after first round of iterations.
+
+Perfectly matched nodes
+=======================
+
+File: BiasGen.spc               <==>  BiasGen.spv                   
+========================
+Vdd                             <==>  Vdd                           
+N1                              <==>  N1                            
+bp                              <==>  bp                            
+Vss                             <==>  GROUND                        
+bn                              <==>  bn                            
+-----------------------
+
+Other nodes
+=======================
+
+-----------------------
+
+-----------------------
+
+
+Perfectly matched elements
+=======================
+
+File: BiasGen.spc               <==>  BiasGen.spv                   
+=======================
+C(XXC1/X1)                      <==>  C(XC1)                        
+R(XXR1/X3)_Merged_Elements      <==>  R(XR1)                        
+M3(XU20)_Merged_Elements        <==>  MM5p                          
+M8(XU20)_Merged_Elements        <==>  MM4p                          
+M6(XU22)_Merged_Elements        <==>  MM2n_Par                      
+M1(XXM1n)_Merged_Elements       <==>  MM1n                          
+M3(XU22)_Merged_Elements        <==>  MM3n_Merged_Elements          
+-----------------------
+
+Other elements
+=======================
+
+-----------------------
+
+-----------------------
+
+==============================================================================
+

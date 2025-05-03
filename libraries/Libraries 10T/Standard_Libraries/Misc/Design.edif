@@ -1,0 +1,5846 @@
+(edif Misc
+	(edifVersion 2 0 0)
+	(edifLevel 0)
+	(keywordMap
+		(keywordLevel 0)
+	)
+	(status
+		(written
+			(timestamp 2013 01 15 18 34 12)
+			(author "williams")
+			(program "Tanner S-Edit"
+				(version "15.23 build 6354")
+			)
+			(property TannerEdifVersion
+				(integer 10)
+			)
+		)
+	)
+	(library Misc
+		(edifLevel 0)
+		(technology
+			(numberDefinition
+				(scale 1
+					(e 1 -12)
+					(unit CAPACITANCE)
+				)
+				(scale 5000000
+					127
+					(unit DISTANCE)
+				)
+			)
+			(figureGroup background
+				(visible
+					(true)
+				)
+				(color 0 0 0)
+				(pathWidth 0)
+			)
+			(figureGroup device
+				(visible
+					(true)
+				)
+				(color 0 80 40)
+				(pathWidth 0)
+			)
+			(figureGroup wire
+				(visible
+					(true)
+				)
+				(color 23 75 100)
+				(pathWidth 0)
+			)
+			(figureGroup netlabel
+				(visible
+					(true)
+				)
+				(color 23 75 100)
+				(pathWidth 0)
+			)
+			(figureGroup text
+				(visible
+					(true)
+				)
+				(color 100 0 0)
+				(pathWidth 0)
+			)
+			(figureGroup portshape
+				(visible
+					(true)
+				)
+				(color 100 0 100)
+				(pathWidth 0)
+			)
+			(figureGroup pin
+				(visible
+					(true)
+				)
+				(color 100 0 100)
+				(pathWidth 0)
+			)
+			(figureGroup instance
+				(visible
+					(false)
+				)
+				(color 85 80 0)
+				(pathWidth 0)
+			)
+			(figureGroup instance_with_name_visible
+				(visible
+					(true)
+				)
+				(color 85 80 0)
+				(pathWidth 0)
+			)
+			(figureGroup cellname
+				(visible
+					(false)
+				)
+				(color 0 80 40)
+				(pathWidth 0)
+			)
+			(figureGroup cellname_with_name_visible
+				(visible
+					(true)
+				)
+				(color 0 80 40)
+				(pathWidth 0)
+			)
+			(figureGroup property
+				(visible
+					(true)
+				)
+				(color 75 75 75)
+				(pathWidth 0)
+			)
+		)
+		
+		(cell Vss
+			(cellType GENERIC)
+			(view Main
+				(viewType SCHEMATIC)
+				(interface
+					(port Vss
+						(property GLOBAL
+							(boolean
+								(true)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_OUTPUT "SPICE.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_PRIMITIVE "SPICE.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename TPR_PERIOD_OUTPUT "TPR.OUTPUT")
+						(string "")
+					)
+					(property
+						(rename VERILOG_PERIOD_OUTPUT "VERILOG.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VERILOG_PERIOD_PRIMITIVE "VERILOG.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_OUTPUT "VHDL.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_PRIMITIVE "VHDL.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property TannerStandard
+						(boolean
+							(true)
+						)
+						(property Timestamp
+							(string "2013 01 15 18 34 12")
+						)
+						(property RevisionCount
+							(string "5")
+						)
+					)
+					(symbol
+						(property TannerStandard
+							(boolean
+								(true)
+							)
+							(property RevisionCount
+								(string "30")
+							)
+							(property InstanceName
+								(string "Vss")
+							)
+						)
+						(boundingBox
+							(rectangle
+								(pt -150 -300)
+								(pt 150 0)
+							)
+						)
+						(keywordDisplay cell
+							(display
+								(figureGroupOverride cellname
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 0)
+								)
+							)
+						)
+						(keywordDisplay instance
+							(display
+								(figureGroupOverride instance
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 50)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 150)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 150)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 100)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 100)
+								)
+							)
+						)
+						(propertyDisplay
+							(name TPR_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 400)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 400)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 350)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 350)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 300)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 300)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 250)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 250)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 200)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 200)
+								)
+							)
+						)
+						(portImplementation
+							(name Vss
+								(display
+									(figureGroupOverride pin
+										(visible
+											(false)
+										)
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+								)
+							)
+							(connectLocation
+								(figure portshape
+									(dot
+										(pt 0 0)
+									)
+								)
+							)
+							(figure portshape
+								(rectangle
+									(pt -4 -4)
+									(pt 4 4)
+								)
+							)
+						)
+						(figure device
+							(polygon
+								(pointList
+									(pt -150 -150)
+									(pt 150 -150)
+									(pt 0 -300)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 0 0)
+									(pt 0 -150)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+		(cell Vee
+			(cellType GENERIC)
+			(view Main
+				(viewType SCHEMATIC)
+				(interface
+					(port Vee
+						(property GLOBAL
+							(boolean
+								(true)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_OUTPUT "SPICE.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_PRIMITIVE "SPICE.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename TPR_PERIOD_OUTPUT "TPR.OUTPUT")
+						(string "")
+					)
+					(property
+						(rename VERILOG_PERIOD_OUTPUT "VERILOG.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VERILOG_PERIOD_PRIMITIVE "VERILOG.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_OUTPUT "VHDL.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_PRIMITIVE "VHDL.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property TannerStandard
+						(boolean
+							(true)
+						)
+						(property Timestamp
+							(string "2013 01 15 18 34 12")
+						)
+						(property RevisionCount
+							(string "5")
+						)
+					)
+					(symbol
+						(property TannerStandard
+							(boolean
+								(true)
+							)
+							(property RevisionCount
+								(string "35")
+							)
+							(property InstanceName
+								(string "Vee")
+							)
+						)
+						(boundingBox
+							(rectangle
+								(pt -170 -270)
+								(pt 180 0)
+							)
+						)
+						(keywordDisplay cell
+							(display
+								(figureGroupOverride cellname
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -200 -50)
+								)
+							)
+						)
+						(keywordDisplay instance
+							(display
+								(figureGroupOverride instance
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -200 -100)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -200 -200)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -200 -200)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -200 -150)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -200 -150)
+								)
+							)
+						)
+						(propertyDisplay
+							(name TPR_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -200 -450)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -200 -450)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -200 -400)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -200 -400)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -200 -350)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -200 -350)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -200 -300)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -200 -300)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -200 -250)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -200 -250)
+								)
+							)
+						)
+						(annotate
+							(stringDisplay "-Vee"
+								(display
+									(figureGroupOverride text
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 30 -200)
+									)
+								)
+							)
+						)
+						(portImplementation
+							(name Vee
+								(display
+									(figureGroupOverride pin
+										(visible
+											(false)
+										)
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+								)
+							)
+							(connectLocation
+								(figure portshape
+									(dot
+										(pt 0 0)
+									)
+								)
+							)
+							(figure portshape
+								(rectangle
+									(pt -4 -4)
+									(pt 4 4)
+								)
+							)
+						)
+						(figure device
+							(rectangle
+								(pt -170 -270)
+								(pt 180 -250)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 0 0)
+									(pt 0 -250)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+		(cell Vdd
+			(cellType GENERIC)
+			(view Main
+				(viewType SCHEMATIC)
+				(interface
+					(port Vdd
+						(property GLOBAL
+							(boolean
+								(true)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_OUTPUT "SPICE.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_PRIMITIVE "SPICE.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename TPR_PERIOD_OUTPUT "TPR.OUTPUT")
+						(string "")
+					)
+					(property
+						(rename VERILOG_PERIOD_OUTPUT "VERILOG.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VERILOG_PERIOD_PRIMITIVE "VERILOG.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_OUTPUT "VHDL.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_PRIMITIVE "VHDL.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property TannerStandard
+						(boolean
+							(true)
+						)
+						(property Timestamp
+							(string "2013 01 15 18 34 12")
+						)
+						(property RevisionCount
+							(string "5")
+						)
+					)
+					(symbol
+						(property TannerStandard
+							(boolean
+								(true)
+							)
+							(property RevisionCount
+								(string "30")
+							)
+							(property InstanceName
+								(string "Vdd")
+							)
+						)
+						(boundingBox
+							(rectangle
+								(pt -170 0)
+								(pt 180 380)
+							)
+						)
+						(keywordDisplay cell
+							(display
+								(figureGroupOverride cellname
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -50)
+								)
+							)
+						)
+						(keywordDisplay instance
+							(display
+								(figureGroupOverride instance
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -100)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 -200)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -200)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 -150)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -150)
+								)
+							)
+						)
+						(propertyDisplay
+							(name TPR_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 -450)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -450)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 -400)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -400)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 -350)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -350)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 -300)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -300)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 -250)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -250)
+								)
+							)
+						)
+						(portImplementation
+							(name Vdd
+								(display
+									(figureGroupOverride pin
+										(visible
+											(false)
+										)
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+								)
+							)
+							(connectLocation
+								(figure portshape
+									(dot
+										(pt 0 0)
+									)
+								)
+							)
+							(figure portshape
+								(rectangle
+									(pt -4 -4)
+									(pt 4 4)
+								)
+							)
+						)
+						(figure device
+							(polygon
+								(pointList
+									(pt -170 150)
+									(pt 180 350)
+									(pt 180 380)
+									(pt -170 180)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 0 0)
+									(pt 0 250)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+		(cell PageID_Tanner
+			(cellType GENERIC)
+			(view Main
+				(viewType SCHEMATIC)
+				(interface
+					(property Address1
+						(string "825 South Myrtle Ave")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Address2
+						(string "Monrovia, CA 91016")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Author
+						(string "?{Author}")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Created
+						(string "5/4/2007 9:47:02 AM")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Design
+						(string "?{Design}")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Fax
+						(string "(626) 471-9801")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Info
+						(string "?{Info}")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Modified
+						(string "?{Date}")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Module
+						(string "?{Cell}")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Page
+						(string "${page}")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Rev
+						(string "?{RevisionCount}")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_ORDER "SPICE.ORDER")
+						(integer -10)
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_OUTPUT "SPICE.OUTPUT")
+						(string "* Design: ?{Design} / Cell: ?{Cell} / View: ?{Name} / Page: ${page}\n* Designed by: ?{Author}\n* Organization: ?{Organization}\n* Info: ?{Info}\n* Date: ?{Date}\n* Revision: ?{RevisionCount}\n")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_PRIMITIVE "SPICE.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename TPR_PERIOD_OUTPUT "TPR.OUTPUT")
+						(string "")
+					)
+					(property Tel
+						(string "(626) 471-9700")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VERILOG_PERIOD_ORDER "VERILOG.ORDER")
+						(integer -10)
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VERILOG_PERIOD_OUTPUT "VERILOG.OUTPUT")
+						(string "// Design: ?{Design} / Cell: ?{Cell} / View: ?{Name} / Page: ${page}\n// Designed by: ?{Author}\n// Organization: ?{Organization}\n// Info: ?{Info}\n// Date: ?{Date}\n// Revision: ?{RevisionCount}\n")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VERILOG_PERIOD_PRIMITIVE "VERILOG.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_ORDER "VHDL.ORDER")
+						(integer -10)
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_OUTPUT "VHDL.OUTPUT")
+						(string "-- Design: ?{Design} / Cell: ?{Cell} / View: ?{Name} / Page: ${page}\n-- Designed by: ?{Author}\n-- Organization: ?{Organization}\n-- Info: ?{Info}\n-- Date: ?{Date}\n-- Revision: ?{RevisionCount}\n")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_PRIMITIVE "VHDL.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property View
+						(string "?{Name}")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property TannerStandard
+						(boolean
+							(true)
+						)
+						(property Timestamp
+							(string "2013 01 15 18 34 12")
+						)
+						(property RevisionCount
+							(string "3")
+						)
+					)
+					(symbol
+						(property TannerStandard
+							(boolean
+								(true)
+							)
+							(property RevisionCount
+								(string "70")
+							)
+						)
+						(boundingBox
+							(rectangle
+								(pt 0 0)
+								(pt 3600 1200)
+							)
+						)
+						(keywordDisplay cell
+							(display
+								(figureGroupOverride cellname
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -50)
+								)
+							)
+						)
+						(keywordDisplay instance
+							(display
+								(figureGroupOverride instance
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -100)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Address1
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 1080 1050)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 1080 1050)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Address2
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 1080 930)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 1080 930)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Author
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 50 500)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 50 500)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Created
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 50 750)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 50 750)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Design
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 50 100)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 50 100)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Fax
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 3580 880)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 3580 880)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Info
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 50 300)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 50 300)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Modified
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 50 650)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 50 650)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Module
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 1480 150)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 1480 150)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Page
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 2830 500)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 2830 500)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Rev
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 2830 700)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 2830 700)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_ORDER
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -250)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -250)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -150)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -150)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -200)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -200)
+								)
+							)
+						)
+						(propertyDisplay
+							(name TPR_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -600)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -600)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Tel
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 3580 1000)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 3580 1000)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_ORDER
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -550)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -550)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -500)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -500)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -450)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -450)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_ORDER
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -400)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -400)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -350)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -350)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -300)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -300)
+								)
+							)
+						)
+						(propertyDisplay
+							(name View
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 1480 50)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 1480 50)
+								)
+							)
+						)
+						(figure device
+							(rectangle
+								(pt 650 960)
+								(pt 970 970)
+							)
+						)
+						(figure device
+							(rectangle
+								(pt 0 0)
+								(pt 3600 1200)
+							)
+						)
+						(figure device
+							(rectangle
+								(pt 0 600)
+								(pt 3600 800)
+							)
+						)
+						(figure device
+							(rectangle
+								(pt 0 400)
+								(pt 2780 600)
+							)
+						)
+						(figure device
+							(rectangle
+								(pt 0 200)
+								(pt 3600 400)
+							)
+						)
+						(figure device
+							(rectangle
+								(pt 0 0)
+								(pt 1430 200)
+							)
+						)
+						(figure device
+							(rectangle
+								(pt 2780 600)
+								(pt 3600 800)
+							)
+						)
+						(figure device
+							(polygon
+								(pointList
+									(pt 620 990)
+									(pt 660 990)
+									(pt 680 990)
+									(pt 690 1000)
+									(pt 720 1020)
+									(pt 720 1040)
+									(pt 660 1040)
+									(pt 660 1020)
+									(pt 650 1010)
+									(pt 630 1010)
+									(pt 630 1050)
+									(pt 720 1050)
+									(pt 720 1090)
+									(pt 710 1110)
+									(pt 690 1120)
+									(pt 630 1120)
+									(pt 620 1110)
+									(pt 610 1110)
+									(pt 600 1100)
+									(pt 600 1090)
+									(pt 590 1070)
+									(pt 580 1040)
+									(pt 580 1010)
+									(pt 600 990)
+									(pt 620 990)
+									(pt 620 1080)
+									(pt 640 1080)
+									(pt 640 1090)
+									(pt 650 1100)
+									(pt 670 1100)
+									(pt 670 1090)
+									(pt 670 1080)
+									(pt 670 1070)
+									(pt 640 1070)
+									(pt 640 1080)
+									(pt 620 1080)
+									(pt 620 990)
+								)
+							)
+						)
+						(figure device
+							(polygon
+								(pointList
+									(pt 510 1120)
+									(pt 500 1100)
+									(pt 520 1110)
+									(pt 530 1120)
+									(pt 550 1120)
+									(pt 560 1120)
+									(pt 570 1110)
+									(pt 580 1100)
+									(pt 580 1090)
+									(pt 550 990)
+									(pt 500 990)
+									(pt 520 1090)
+									(pt 520 1090)
+									(pt 510 1090)
+									(pt 500 1090)
+									(pt 500 1090)
+									(pt 470 990)
+									(pt 420 990)
+									(pt 450 1120)
+									(pt 510 1120)
+								)
+							)
+						)
+						(figure device
+							(polygon
+								(pointList
+									(pt 740 930)
+									(pt 710 820)
+									(pt 770 820)
+									(pt 800 840)
+									(pt 810 880)
+									(pt 810 900)
+									(pt 810 920)
+									(pt 800 920)
+									(pt 790 930)
+									(pt 790 890)
+									(pt 770 840)
+									(pt 770 840)
+									(pt 740 840)
+									(pt 760 920)
+									(pt 770 920)
+									(pt 790 910)
+									(pt 790 930)
+								)
+							)
+						)
+						(figure device
+							(polygon
+								(pointList
+									(pt 110 990)
+									(pt 160 1150)
+									(pt 200 1150)
+									(pt 210 1180)
+									(pt 130 1180)
+									(pt 130 1170)
+									(pt 120 1180)
+									(pt 110 1180)
+									(pt 130 1160)
+									(pt 100 1180)
+									(pt 90 1180)
+									(pt 120 1150)
+									(pt 80 1180)
+									(pt 60 1180)
+									(pt 120 1130)
+									(pt 50 1180)
+									(pt 40 1150)
+									(pt 90 1150)
+									(pt 40 990)
+								)
+							)
+						)
+						(figure device
+							(polygon
+								(pointList
+									(pt 720 930)
+									(pt 710 910)
+									(pt 670 910)
+									(pt 670 890)
+									(pt 700 890)
+									(pt 700 870)
+									(pt 670 870)
+									(pt 650 840)
+									(pt 690 840)
+									(pt 690 820)
+									(pt 620 820)
+									(pt 650 930)
+									(pt 720 930)
+								)
+							)
+						)
+						(figure device
+							(polygon
+								(pointList
+									(pt 890 930)
+									(pt 900 820)
+									(pt 870 820)
+									(pt 870 910)
+									(pt 870 910)
+									(pt 820 820)
+									(pt 800 820)
+									(pt 860 930)
+									(pt 890 930)
+								)
+							)
+						)
+						(figure device
+							(polygon
+								(pointList
+									(pt 840 860)
+									(pt 850 870)
+									(pt 870 870)
+									(pt 870 860)
+									(pt 840 860)
+								)
+							)
+						)
+						(figure device
+							(polygon
+								(pointList
+									(pt 720 990)
+									(pt 740 1120)
+									(pt 800 1120)
+									(pt 800 1100)
+									(pt 820 1120)
+									(pt 840 1120)
+									(pt 840 1080)
+									(pt 810 1080)
+									(pt 790 1070)
+									(pt 790 1060)
+									(pt 770 990)
+								)
+							)
+						)
+						(figure device
+							(polygon
+								(pointList
+									(pt 360 1120)
+									(pt 360 1100)
+									(pt 380 1110)
+									(pt 380 1120)
+									(pt 400 1120)
+									(pt 410 1120)
+									(pt 430 1110)
+									(pt 430 1100)
+									(pt 430 1090)
+									(pt 400 990)
+									(pt 350 990)
+									(pt 380 1090)
+									(pt 380 1090)
+									(pt 370 1090)
+									(pt 360 1090)
+									(pt 350 1090)
+									(pt 330 990)
+									(pt 280 990)
+									(pt 300 1120)
+									(pt 360 1120)
+								)
+							)
+						)
+						(figure device
+							(polygon
+								(pointList
+									(pt 260 990)
+									(pt 210 990)
+									(pt 210 1000)
+									(pt 200 1000)
+									(pt 200 1010)
+									(pt 210 1030)
+									(pt 210 1050)
+									(pt 190 1040)
+									(pt 190 1020)
+									(pt 200 1010)
+									(pt 200 1000)
+									(pt 180 990)
+									(pt 140 990)
+									(pt 130 1010)
+									(pt 130 1020)
+									(pt 150 1060)
+									(pt 180 1060)
+									(pt 200 1070)
+									(pt 230 1070)
+									(pt 230 1100)
+									(pt 220 1100)
+									(pt 200 1080)
+									(pt 150 1080)
+									(pt 150 1090)
+									(pt 160 1100)
+									(pt 200 1120)
+									(pt 250 1120)
+									(pt 280 1090)
+									(pt 280 1050)
+									(pt 260 1010)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 680 820)
+									(pt 680 840)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 660 820)
+									(pt 660 840)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 650 820)
+									(pt 650 930)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 670 820)
+									(pt 670 840)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 640 820)
+									(pt 640 890)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 630 820)
+									(pt 630 850)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 660 860)
+									(pt 660 930)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 680 890)
+									(pt 680 870)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 690 870)
+									(pt 690 890)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 670 870)
+									(pt 670 930)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 710 910)
+									(pt 710 930)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 700 910)
+									(pt 700 930)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 690 910)
+									(pt 690 930)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 680 910)
+									(pt 680 930)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 720 820)
+									(pt 720 850)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 730 820)
+									(pt 730 890)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 880 930)
+									(pt 880 820)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 740 820)
+									(pt 740 930)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 750 880)
+									(pt 750 930)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 760 920)
+									(pt 760 930)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 770 920)
+									(pt 770 930)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 780 930)
+									(pt 780 920)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 790 920)
+									(pt 790 830)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 800 920)
+									(pt 800 840)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 810 880)
+									(pt 810 920)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 780 860)
+									(pt 780 830)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 770 840)
+									(pt 770 820)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 760 840)
+									(pt 760 820)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 750 840)
+									(pt 750 820)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 860 860)
+									(pt 860 870)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 860 930)
+									(pt 860 890)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 850 910)
+									(pt 850 860)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 840 890)
+									(pt 840 860)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 830 840)
+									(pt 830 870)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 820 860)
+									(pt 820 820)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 810 820)
+									(pt 810 840)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 870 910)
+									(pt 870 930)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 890 930)
+									(pt 890 820)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 610 990)
+									(pt 610 1110)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 600 1090)
+									(pt 600 990)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 590 1000)
+									(pt 590 1060)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 620 990)
+									(pt 620 1110)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 630 1120)
+									(pt 630 990)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 640 990)
+									(pt 640 1010)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 650 990)
+									(pt 650 1010)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 660 1020)
+									(pt 660 990)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 670 990)
+									(pt 670 1040)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 680 1040)
+									(pt 680 990)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 690 1000)
+									(pt 690 1040)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 700 1040)
+									(pt 700 1010)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 710 1040)
+									(pt 710 1020)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 640 1050)
+									(pt 640 1120)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 650 1070)
+									(pt 650 1050)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 660 1050)
+									(pt 660 1070)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 670 1120)
+									(pt 670 1050)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 680 1120)
+									(pt 680 1050)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 690 1050)
+									(pt 690 1120)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 700 1050)
+									(pt 700 1110)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 710 1110)
+									(pt 710 1050)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 650 1120)
+									(pt 650 1100)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 660 1120)
+									(pt 660 1100)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 730 990)
+									(pt 730 1000)
+									(pt 730 1060)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 740 990)
+									(pt 740 1090)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 750 1120)
+									(pt 750 990)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 760 990)
+									(pt 760 1120)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 770 1120)
+									(pt 770 990)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 780 1120)
+									(pt 780 1030)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 790 1120)
+									(pt 790 1070)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 800 1100)
+									(pt 800 1080)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 810 1110)
+									(pt 810 1100)
+									(pt 810 1080)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 820 1080)
+									(pt 820 1120)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 830 1120)
+									(pt 830 1080)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 840 1080)
+									(pt 840 1120)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 430 990)
+									(pt 430 1020)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 440 990)
+									(pt 440 1070)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 450 990)
+									(pt 450 1000)
+									(pt 450 1120)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 460 990)
+									(pt 460 1120)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 470 990)
+									(pt 470 1120)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 480 1120)
+									(pt 480 1030)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 490 1120)
+									(pt 490 1060)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 500 1120)
+									(pt 500 1090)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 510 1090)
+									(pt 510 1100)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 520 990)
+									(pt 520 1110)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 510 990)
+									(pt 510 1040)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 530 1120)
+									(pt 530 990)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 540 990)
+									(pt 540 1000)
+									(pt 540 1120)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 550 1120)
+									(pt 550 990)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 560 1120)
+									(pt 560 1030)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 570 1110)
+									(pt 570 1060)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 210 990)
+									(pt 210 1070)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 290 990)
+									(pt 290 1050)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 300 990)
+									(pt 300 1110)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 310 990)
+									(pt 310 1120)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 320 990)
+									(pt 320 1120)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 330 1120)
+									(pt 330 990)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 340 1120)
+									(pt 340 1040)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 350 1120)
+									(pt 350 1090)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 420 1110)
+									(pt 420 1060)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 410 1120)
+									(pt 410 1030)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 400 990)
+									(pt 400 1120)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 390 990)
+									(pt 390 1000)
+									(pt 390 1120)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 380 990)
+									(pt 380 1110)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 360 1090)
+									(pt 360 1100)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 200 1120)
+									(pt 200 1080)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 270 1030)
+									(pt 270 1100)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 360 990)
+									(pt 360 1020)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 260 1010)
+									(pt 260 1110)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 250 1120)
+									(pt 250 990)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 240 990)
+									(pt 240 1000)
+									(pt 240 1120)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 230 1120)
+									(pt 230 1110)
+									(pt 230 990)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 220 1070)
+									(pt 220 990)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 370 1100)
+									(pt 370 1090)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 370 990)
+									(pt 370 1050)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 280 1050)
+									(pt 280 1090)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 110 990)
+									(pt 110 1000)
+									(pt 110 1130)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 180 990)
+									(pt 180 1060)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 170 990)
+									(pt 170 1060)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 160 990)
+									(pt 160 1000)
+									(pt 160 1060)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 150 990)
+									(pt 150 1060)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 140 990)
+									(pt 140 1040)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 190 1000)
+									(pt 190 1060)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 200 1070)
+									(pt 200 1050)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 220 1100)
+									(pt 220 1120)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 210 1120)
+									(pt 210 1090)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 100 1150)
+									(pt 100 1160)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 190 1080)
+									(pt 190 1110)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 180 1080)
+									(pt 180 1110)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 170 1080)
+									(pt 170 1100)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 160 1080)
+									(pt 160 1100)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 50 990)
+									(pt 50 1000)
+									(pt 50 1020)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 60 990)
+									(pt 60 1050)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 70 990)
+									(pt 70 1080)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 80 990)
+									(pt 80 1120)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 90 990)
+									(pt 90 1140)
+									(pt 90 990)
+									(pt 90 1000)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 100 990)
+									(pt 100 1140)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 120 1020)
+									(pt 120 1160)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 130 1060)
+									(pt 130 1170)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 140 1090)
+									(pt 140 1180)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 150 1120)
+									(pt 150 1180)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 160 1150)
+									(pt 160 1160)
+									(pt 160 1180)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 170 1150)
+									(pt 170 1160)
+									(pt 170 1180)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 180 1180)
+									(pt 180 1150)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 190 1180)
+									(pt 190 1150)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 200 1150)
+									(pt 200 1180)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 110 1140)
+									(pt 110 1150)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 90 1160)
+									(pt 90 1170)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 80 1170)
+									(pt 80 1180)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 70 1150)
+									(pt 70 1160)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 60 1150)
+									(pt 60 1170)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 50 1150)
+									(pt 50 1180)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 110 1160)
+									(pt 110 1170)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 100 1170)
+									(pt 100 1180)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 120 1170)
+									(pt 120 1180)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+		(cell PageID
+			(cellType GENERIC)
+			(view Main
+				(viewType SCHEMATIC)
+				(interface
+					(property Address1
+						(string "[ ]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Address2
+						(string "[ ]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Author
+						(string "?{Author}")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Created
+						(string "5/4/2007 9:47:02 AM")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Design
+						(string "?{Design}")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Fax
+						(string "[ ]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Info
+						(string "?{Info}")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Modified
+						(string "?{Date}")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Module
+						(string "?{Cell}")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Page
+						(string "${page}")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property Rev
+						(string "?{RevisionCount}")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_ORDER "SPICE.ORDER")
+						(integer -10)
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_OUTPUT "SPICE.OUTPUT")
+						(string "* Design: ?{Design} / Cell: ?{Cell} / View: ?{Name} / Page: ${page}\n* Designed by: ?{Author}\n* Organization: ?{Organization}\n* Info: ?{Info}\n* Date: ?{Date}\n* Revision: ?{RevisionCount}\n")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_PRIMITIVE "SPICE.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename TPR_PERIOD_OUTPUT "TPR.OUTPUT")
+						(string "")
+					)
+					(property Tel
+						(string "[ ]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VERILOG_PERIOD_ORDER "VERILOG.ORDER")
+						(integer -10)
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VERILOG_PERIOD_OUTPUT "VERILOG.OUTPUT")
+						(string "// Design: ?{Design} / Cell: ?{Cell} / View: ?{Name} / Page: ${page}\n// Designed by: ?{Author}\n// Organization: ?{Organization}\n// Info: ?{Info}\n// Date: ?{Date}\n// Revision: ?{RevisionCount}\n")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VERILOG_PERIOD_PRIMITIVE "VERILOG.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_ORDER "VHDL.ORDER")
+						(integer -10)
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_OUTPUT "VHDL.OUTPUT")
+						(string "-- Design: ?{Design} / Cell: ?{Cell} / View: ?{Name} / Page: ${page}\n-- Designed by: ?{Author}\n-- Organization: ?{Organization}\n-- Info: ?{Info}\n-- Date: ?{Date}\n-- Revision: ?{RevisionCount}\n")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_PRIMITIVE "VHDL.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property View
+						(string "?{Name}")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property TannerStandard
+						(boolean
+							(true)
+						)
+						(property Timestamp
+							(string "2013 01 15 18 34 12")
+						)
+						(property RevisionCount
+							(string "3")
+						)
+					)
+					(symbol
+						(property TannerStandard
+							(boolean
+								(true)
+							)
+							(property RevisionCount
+								(string "34")
+							)
+						)
+						(boundingBox
+							(rectangle
+								(pt 0 0)
+								(pt 3600 1200)
+							)
+						)
+						(keywordDisplay cell
+							(display
+								(figureGroupOverride cellname
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -50)
+								)
+							)
+						)
+						(keywordDisplay instance
+							(display
+								(figureGroupOverride instance
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -100)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Address1
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 1080 1050)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 1080 1050)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Address2
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 1080 930)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 1080 930)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Author
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 50 500)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 50 500)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Created
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 50 750)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 50 750)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Design
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 50 100)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 50 100)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Fax
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 3580 880)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 3580 880)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Info
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 50 300)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 50 300)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Modified
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 50 650)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 50 650)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Module
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 1480 150)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 1480 150)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Page
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 2830 500)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 2830 500)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Rev
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 2830 700)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 2830 700)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_ORDER
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -250)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -250)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -150)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -150)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -200)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -200)
+								)
+							)
+						)
+						(propertyDisplay
+							(name TPR_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -600)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -600)
+								)
+							)
+						)
+						(propertyDisplay
+							(name Tel
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 3580 1000)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 3580 1000)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_ORDER
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -550)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -550)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -500)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -500)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -450)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -450)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_ORDER
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -400)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -400)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -350)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -350)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(origin
+										(pt 0 -300)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(origin
+									(pt 0 -300)
+								)
+							)
+						)
+						(propertyDisplay
+							(name View
+								(display
+									(figureGroupOverride property
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 1480 50)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(textHeight 100)
+								)
+								(justify CENTERLEFT)
+								(origin
+									(pt 1480 50)
+								)
+							)
+						)
+						(figure device
+							(rectangle
+								(pt 2780 600)
+								(pt 3600 800)
+							)
+						)
+						(figure device
+							(rectangle
+								(pt 0 0)
+								(pt 1430 200)
+							)
+						)
+						(figure device
+							(rectangle
+								(pt 0 200)
+								(pt 3600 400)
+							)
+						)
+						(figure device
+							(rectangle
+								(pt 0 400)
+								(pt 2780 600)
+							)
+						)
+						(figure device
+							(rectangle
+								(pt 0 600)
+								(pt 3600 800)
+							)
+						)
+						(figure device
+							(rectangle
+								(pt 0 0)
+								(pt 3600 1200)
+							)
+						)
+					)
+				)
+			)
+		)
+		(cell NoConnection
+			(cellType GENERIC)
+			(view Main
+				(viewType SCHEMATIC)
+				(interface
+					(port NC)
+					(property
+						(rename SPICE_PERIOD_OUTPUT "SPICE.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_PRIMITIVE "SPICE.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename TPR_PERIOD_OUTPUT "TPR.OUTPUT")
+						(string "")
+					)
+					(property
+						(rename VERILOG_PERIOD_OUTPUT "VERILOG.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VERILOG_PERIOD_PRIMITIVE "VERILOG.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_OUTPUT "VHDL.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_PRIMITIVE "VHDL.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property TannerStandard
+						(boolean
+							(true)
+						)
+						(property Timestamp
+							(string "2013 01 15 18 34 12")
+						)
+						(property RevisionCount
+							(string "5")
+						)
+					)
+					(symbol
+						(property TannerStandard
+							(boolean
+								(true)
+							)
+							(property RevisionCount
+								(string "37")
+							)
+							(property InstanceName
+								(string "NoCn")
+							)
+						)
+						(boundingBox
+							(rectangle
+								(pt 0 -40)
+								(pt 140 40)
+							)
+						)
+						(keywordDisplay cell
+							(display
+								(figureGroupOverride cellname
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -100)
+								)
+							)
+						)
+						(keywordDisplay instance
+							(display
+								(figureGroupOverride instance
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -150)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 0 -250)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -250)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 0 -200)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -200)
+								)
+							)
+						)
+						(propertyDisplay
+							(name TPR_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 0 -500)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -500)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 0 -300)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -300)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 0 -350)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -350)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 0 -400)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -400)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 0 -450)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -450)
+								)
+							)
+						)
+						(portImplementation
+							(name NC
+								(display
+									(figureGroupOverride pin
+										(visible
+											(false)
+										)
+										(textHeight 100)
+									)
+									(justify CENTERRIGHT)
+								)
+							)
+							(connectLocation
+								(figure portshape
+									(dot
+										(pt 0 0)
+									)
+								)
+							)
+							(figure portshape
+								(rectangle
+									(pt -4 -4)
+									(pt 4 4)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 0 0)
+									(pt 100 0)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 140 -40)
+									(pt 60 40)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 60 -40)
+									(pt 140 40)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+		(cell NC
+			(cellType GENERIC)
+			(view Main
+				(viewType SCHEMATIC)
+				(interface
+					(port NC)
+					(property
+						(rename SPICE_PERIOD_OUTPUT "SPICE.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_PRIMITIVE "SPICE.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename TPR_PERIOD_OUTPUT "TPR.OUTPUT")
+						(string "")
+					)
+					(property
+						(rename VERILOG_PERIOD_OUTPUT "VERILOG.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VERILOG_PERIOD_PRIMITIVE "VERILOG.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_OUTPUT "VHDL.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_PRIMITIVE "VHDL.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property TannerStandard
+						(boolean
+							(true)
+						)
+						(property Timestamp
+							(string "2013 01 15 18 34 12")
+						)
+						(property RevisionCount
+							(string "5")
+						)
+					)
+					(symbol
+						(property TannerStandard
+							(boolean
+								(true)
+							)
+							(property RevisionCount
+								(string "37")
+							)
+							(property InstanceName
+								(string "NC")
+							)
+						)
+						(boundingBox
+							(rectangle
+								(pt -40 -40)
+								(pt 40 40)
+							)
+						)
+						(keywordDisplay cell
+							(display
+								(figureGroupOverride cellname
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -100)
+								)
+							)
+						)
+						(keywordDisplay instance
+							(display
+								(figureGroupOverride instance
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -150)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 0 -250)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -250)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 0 -200)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -200)
+								)
+							)
+						)
+						(propertyDisplay
+							(name TPR_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 0 -500)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -500)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 0 -300)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -300)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 0 -350)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -350)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 0 -400)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -400)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt 0 -450)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt 0 -450)
+								)
+							)
+						)
+						(portImplementation
+							(name NC
+								(display
+									(figureGroupOverride pin
+										(visible
+											(false)
+										)
+										(textHeight 100)
+									)
+									(justify CENTERRIGHT)
+								)
+							)
+							(connectLocation
+								(figure portshape
+									(dot
+										(pt 0 0)
+									)
+								)
+							)
+							(figure portshape
+								(rectangle
+									(pt -4 -4)
+									(pt 4 4)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt -40 -40)
+									(pt 40 40)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 40 -40)
+									(pt -40 40)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+		(cell Gnd
+			(cellType GENERIC)
+			(view Main
+				(viewType SCHEMATIC)
+				(interface
+					(port Gnd
+						(property GLOBAL
+							(boolean
+								(true)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_OUTPUT "SPICE.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_PRIMITIVE "SPICE.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename TPR_PERIOD_OUTPUT "TPR.OUTPUT")
+						(string "")
+					)
+					(property
+						(rename VERILOG_PERIOD_OUTPUT "VERILOG.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VERILOG_PERIOD_PRIMITIVE "VERILOG.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_OUTPUT "VHDL.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_PRIMITIVE "VHDL.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property TannerStandard
+						(boolean
+							(true)
+						)
+						(property Timestamp
+							(string "2013 01 15 18 34 12")
+						)
+						(property RevisionCount
+							(string "5")
+						)
+					)
+					(symbol
+						(property TannerStandard
+							(boolean
+								(true)
+							)
+							(property RevisionCount
+								(string "38")
+							)
+							(property InstanceName
+								(string "GND")
+							)
+						)
+						(boundingBox
+							(rectangle
+								(pt -150 -300)
+								(pt 150 0)
+							)
+						)
+						(keywordDisplay cell
+							(display
+								(figureGroupOverride cellname
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 0)
+								)
+							)
+						)
+						(keywordDisplay instance
+							(display
+								(figureGroupOverride instance
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 50)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 150)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 150)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 100)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 100)
+								)
+							)
+						)
+						(propertyDisplay
+							(name TPR_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 400)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 400)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 350)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 350)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 300)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 300)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 250)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 250)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 200)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 200)
+								)
+							)
+						)
+						(portImplementation
+							(name Gnd
+								(display
+									(figureGroupOverride pin
+										(visible
+											(false)
+										)
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+								)
+							)
+							(connectLocation
+								(figure portshape
+									(dot
+										(pt 0 0)
+									)
+								)
+							)
+							(figure portshape
+								(rectangle
+									(pt -4 -4)
+									(pt 4 4)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt -20 -300)
+									(pt 30 -300)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 80 -220)
+									(pt -70 -220)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt -150 -150)
+									(pt 150 -150)
+								)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 0 0)
+									(pt 0 -150)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+		(cell AVdd
+			(cellType GENERIC)
+			(view Main
+				(viewType SCHEMATIC)
+				(interface
+					(port AVdd
+						(property GLOBAL
+							(boolean
+								(true)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_OUTPUT "SPICE.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename SPICE_PERIOD_PRIMITIVE "SPICE.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename TPR_PERIOD_OUTPUT "TPR.OUTPUT")
+						(string "")
+					)
+					(property
+						(rename VERILOG_PERIOD_OUTPUT "VERILOG.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VERILOG_PERIOD_PRIMITIVE "VERILOG.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_OUTPUT "VHDL.OUTPUT")
+						(string "[]")
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property
+						(rename VHDL_PERIOD_PRIMITIVE "VHDL.PRIMITIVE")
+						(boolean (true))
+						(property InterfaceParameter
+							(boolean
+								(false)
+							)
+						)
+					)
+					(property TannerStandard
+						(boolean
+							(true)
+						)
+						(property Timestamp
+							(string "2013 01 15 18 34 12")
+						)
+						(property RevisionCount
+							(string "5")
+						)
+					)
+					(symbol
+						(property TannerStandard
+							(boolean
+								(true)
+							)
+							(property RevisionCount
+								(string "31")
+							)
+							(property InstanceName
+								(string "AVdd")
+							)
+						)
+						(boundingBox
+							(rectangle
+								(pt -170 0)
+								(pt 180 280)
+							)
+						)
+						(keywordDisplay cell
+							(display
+								(figureGroupOverride cellname
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -50)
+								)
+							)
+						)
+						(keywordDisplay instance
+							(display
+								(figureGroupOverride instance
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -100)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 -200)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -200)
+								)
+							)
+						)
+						(propertyDisplay
+							(name SPICE_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 -150)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -150)
+								)
+							)
+						)
+						(propertyDisplay
+							(name TPR_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 -450)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -450)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 -400)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -400)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VERILOG_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 -350)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -350)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_OUTPUT
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 -300)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -300)
+								)
+							)
+						)
+						(propertyDisplay
+							(name VHDL_PERIOD_PRIMITIVE
+								(display
+									(figureGroupOverride property
+										(visible
+											(false)
+										)
+										(textHeight 50)
+									)
+									(justify LOWERRIGHT)
+									(origin
+										(pt -50 -250)
+									)
+								)
+							)
+							(display
+								(figureGroupOverride property
+									(visible
+										(false)
+									)
+									(textHeight 50)
+								)
+								(justify LOWERRIGHT)
+								(origin
+									(pt -50 -250)
+								)
+							)
+						)
+						(annotate
+							(stringDisplay "AVdd"
+								(display
+									(figureGroupOverride text
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+									(origin
+										(pt 50 200)
+									)
+								)
+							)
+						)
+						(portImplementation
+							(name AVdd
+								(display
+									(figureGroupOverride pin
+										(visible
+											(false)
+										)
+										(textHeight 100)
+									)
+									(justify CENTERLEFT)
+								)
+							)
+							(connectLocation
+								(figure portshape
+									(dot
+										(pt 0 0)
+									)
+								)
+							)
+							(figure portshape
+								(rectangle
+									(pt -4 -4)
+									(pt 4 4)
+								)
+							)
+						)
+						(figure device
+							(rectangle
+								(pt -170 250)
+								(pt 180 280)
+							)
+						)
+						(figure device
+							(path
+								(pointList
+									(pt 0 0)
+									(pt 0 250)
+								)
+							)
+						)
+					)
+				)
+			)
+		)
+	)
+)

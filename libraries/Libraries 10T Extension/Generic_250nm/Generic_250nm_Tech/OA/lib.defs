@@ -1,0 +1,2 @@
+DEFINE Generic_250nm_TechSetup Generic_250nm_TechSetup
+ASSIGN Generic_250nm_TechSetup libMode shared

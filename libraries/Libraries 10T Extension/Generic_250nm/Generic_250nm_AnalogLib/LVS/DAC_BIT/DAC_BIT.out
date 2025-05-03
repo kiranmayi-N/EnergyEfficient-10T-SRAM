@@ -1,0 +1,163 @@
+File written by LVS 16.00 as a result of: "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\DAC_BIT\DAC_BIT.vdb" on Thu Feb 14 12:43:05 2013
+
+Command line:
+lvs64 "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\DAC_BIT\DAC_BIT.spc" "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\DAC_BIT\DAC_BIT.spv" -o "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\DAC_BIT\DAC_BIT.out" -l "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\DAC_BIT\DAC_BIT.lst" -t "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\DAC_BIT\DAC_BIT_flat.spc" -h "S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\DAC_BIT\DAC_BIT_flat.spv" -mr ALL -mc ALL -mm ALL -x -TTSPICE -nrclf -c128 -dv0.100 -dg0.100 -y2 -vf -fafpr 
+
+Engine configuration report:
+Layout netlist file.............................................. S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\DAC_BIT\DAC_BIT.spc
+Layout netlist file format....................................... T-Spice
+Schematic netlist file........................................... S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\DAC_BIT\DAC_BIT.spv
+Schematic netlist file format.................................... T-Spice
+Consider Bulk nodes.............................................. TRUE
+By default, FET S/D terminals are swappable...................... TRUE
+By default, BJT C/E terminals are swappable...................... FALSE
+By default, Resistors are polarized elements..................... FALSE
+By default, Capacitors are polarized elements.................... FALSE
+By default, Inductors are polarized elements..................... FALSE
+Merge series and parallel R...................................... ALL
+Merge series and parallel C...................................... ALL
+Merge series and parallel L...................................... OFF
+Merge parallel M................................................. ALL
+Merge stacked M.................................................. OFF
+Merge parallel D................................................. OFF
+Merge parallel B................................................. OFF
+Merge parallel J................................................. OFF
+Merge parallel Z................................................. OFF
+Merge parallel Q................................................. OFF
+Merge series MOSFETs............................................. OFF
+Find series MOSFETs that differ in order or parameter value...... OFF
+Remove shorted devices........................................... ON
+Remove disconnected devices...................................... OFF
+Fast Iteration................................................... OFF
+Parameter comparison threshold for CAPACITORS.................... 0.1%
+Parameter comparison threshold for INDUCTORS..................... 0.1%
+Parameter comparison threshold for RESISTORS..................... 0.1%
+Parameter comparison threshold for MOSFET GATE LENGTHS........... 0.1%
+Parameter comparison threshold for MOSFET GATE WIDTHS............ 0.1%
+Parameter comparison threshold for X PARAMETERS.................. 0.1%
+
+
+Parsing file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\DAC_BIT\DAC_BIT.spc...
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: LVS
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: GEN_LVS
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: Diodes
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: RES_CAP_GEN
+Warning: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib(98) Implicit resistor .model definition rhp_lvs
+Warning: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib(102) Implicit resistor .model definition rnp_lvs
+Warning: DAC_BIT.spc(18) Implicit mosfet .model definition PMOS25
+Warning: DAC_BIT.spc(28) Implicit mosfet .model definition NMOS25
+Flattening netlist...
+Flattening netlist (second pass)...
+
+Parsing file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\DAC_BIT\DAC_BIT.spv...
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: LVS
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: GEN_LVS
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: Diodes
+Reading library file S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib label: RES_CAP_GEN
+Warning: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib(98) Implicit resistor .model definition rhp_lvs
+Warning: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_Tech\Generic_250nm.lib(102) Implicit resistor .model definition rnp_lvs
+Warning: DAC_BIT.spv(33) Implicit mosfet .model definition NMOS25
+Warning: DAC_BIT.spv(35) Implicit mosfet .model definition PMOS25
+Flattening netlist...
+Flattening netlist (second pass)...
+
+Device                     DAC_BIT.spc       DAC_BIT.spv   Status            
+---------------        ---------------   ---------------   ---------------     
+M_NMOS25                             4                 2   MISMATCH (2)
+M_PMOS25                             4                 2   MISMATCH (2)
+R_rhp_lvs                            6                 2   MISMATCH (4)
+                          ------------      ------------
+Total elements                      14                 6   MISMATCH (8)
+Total nodes                         11                 7   MISMATCH (4)
+Single-pin nodes                     1                 1
+                          ------------      ------------
+Connected nodes                     10                 6
+
+************************ SINGLE PIN NODES ***************************
+
+Nodes in file DAC_BIT.spc connected to only one pin
+Vin
+*********************
+
+Nodes in file DAC_BIT.spv connected to only one pin
+VIN
+*********************
+
+
+Merging devices...
+Eliminated from DAC_BIT.spc:
+     4 parallel MOSFET(s)
+     5 series resistor(s)
+     5 node(s)
+Eliminated from DAC_BIT.spv:
+     1 series resistor(s)
+     1 node(s)
+
+Writing DAC_BIT.spc to flat spice file: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\DAC_BIT\DAC_BIT_flat.spc
+
+Writing DAC_BIT.spv to flat spice file: S:\TannerTools\main\TannerToolsShippingFiles\Process\Generic_250nm\Generic_250nm_AnalogLib\LVS\DAC_BIT\DAC_BIT_flat.spv
+
+Device                     DAC_BIT.spc       DAC_BIT.spv   Status            
+---------------        ---------------   ---------------   ---------------     
+M_NMOS25                             2                 2
+M_PMOS25                             2                 2
+R_rhp_lvs                            1                 1
+                          ------------      ------------
+Total elements                       5                 5
+Total nodes                          6                 6
+Single-pin nodes                     1                 1
+
+************************ SINGLE PIN NODES ***************************
+
+Nodes in file DAC_BIT.spc connected to only one pin
+Vin
+*********************
+
+Nodes in file DAC_BIT.spv connected to only one pin
+VIN
+*********************
+
+**************************** MERGED DEVICES *************************
+
+Merged devices in: DAC_BIT.spc
+    R(XU10/X5/X1)_Merged_Elements = R(XU10/X5/X1), R(XU10/X7/X1), R(XU10/X6/X1), R(XU10/X3/X1), R(XU10/X4/X1), R(XU10/X2/X1)
+    M1(XU3)_Merged_Elements = M1(XU3), M2(XU3), M1
+    M1(XU5)_Merged_Elements = M1(XU5), M2(XU5), M3
+
+Merged devices in: DAC_BIT.spv
+    R(XR2)_Merged_Elements = R(XR2), R(XR1)
+
+
+****************** DETAILED PROCESSING INFORMATION ******************
+
+**************************** ITERATING ******************************
+
+Iterating...
+  5% done.
+ 10% done.
+ 15% done.
+ 20% done.
+ 25% done.
+ 30% done.
+ 35% done.
+ 40% done.
+ 45% done.
+ 50% done.
+ 55% done.
+ 60% done.
+ 65% done.
+ 70% done.
+ 75% done.
+ 80% done.
+ 85% done.
+ 90% done.
+ 95% done.
+100% done.
+
+************************** FINAL RESULT *****************************
+
+Note: Devices have been merged.
+Circuits are equal.
+Run time: 0:01 (min:sec)
+
+0 errors, 8 warnings

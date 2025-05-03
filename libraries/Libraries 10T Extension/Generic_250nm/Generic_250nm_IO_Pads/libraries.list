@@ -1,0 +1,6 @@
+..\..\Standard_Libraries\Misc
+..\..\Standard_Libraries\Devices
+..\..\Standard_Libraries\SPICE_Elements
+..\..\Standard_Libraries\SPICE_Commands
+..\..\Standard_Libraries\SPICE_Measure
+..\Generic_250nm_Devices
